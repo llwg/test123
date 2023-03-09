@@ -105,7 +105,9 @@ nav .title
 	; margin-left: 0.5rem
 	}
 
-.film-medium { font-family: modern-font-haha, monospace; font-style: italic }
+.stills { display: grid; gap: 1rem }
+
+.film-medium { font-family: modern-font-haha, monospace; font-style: italic; margin-bottom: 0.6rem }
 
 h2.title { font-family: modern-font-haha, monospace }
 
@@ -130,7 +132,7 @@ h1 { position: relative }
 
 .film-yt { width: 100%; aspect-ratio: 16/9 }
 
-#content { display: grid; gap: 0.8rem; grid-auto-rows: max-content }
+#content { display: grid; gap: 2rem; grid-auto-rows: max-content }
 
 hr { width: 100%; border: none; height: 1px; background-color: var(--main-text-color); opacity: 0.8 }
 
@@ -140,8 +142,7 @@ nav { font-size: 1.6rem }
 nav { display: flex; flex-direction: column }
 
 nav summary
-	{ list-style: none
-	; list-style-type: none
+	{ display: block
 	; user-select: none
 	}
 
@@ -187,6 +188,7 @@ nav details a
 		; visibility: visible
 		; opacity: 0
 		; pointer-events: none
+		; user-select: none
 		; transition: opacity 0.1s ease-in-out;
 		}
 
