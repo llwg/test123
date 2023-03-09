@@ -68,11 +68,10 @@ const pages = await Promise.all(
 		const desc_content = await pandoc_markdown(lines)
 
 		const short = title2short(title)
-		const stuff = title === 'index'
-			? ''
-			: medium // is this a film ?
-				? `<div class=film-intro><h2 class=title>${title}</h2><div class=film-medium>${medium}</div>${desc_content}</div>`
-				: `<div><h2>${title}</h2></div>${desc_content}`
+
+		const stuff = medium // film page?
+			? `<div class=film-intro><h2 class=title>${title}</h2><div class=film-medium>${medium}</div>${desc_content}</div>`
+			: `<div>${title === 'index' ? '' : `<h2>${title}</h2>`}</div>${desc_content}` // home page?
 
 		const yt = youtube
 			? `<iframe class=film-yt src="https://www.youtube.com/embed/${youtube}" title="YouTube player for ${title}" frameborder=0 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`
