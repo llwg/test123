@@ -55,7 +55,7 @@ const navstuff = curr => navs.map(g => {
 		${json.vals().filter(({group}) => g === group)
 			.map(({ title, short, medium }) => {
 				const thumb = medium
-					? `<img class=thumb src='media/${short}/01.jpg'>`
+					? `<img class=thumb src='media/${short}/1.jpg'>`
 					: ''
 				return `<a short='${short}' class='${curr.short === short ? 'current-page ' : ''}title' href='${short2path(short)}'>${thumb}${title}</a>`
 			})
