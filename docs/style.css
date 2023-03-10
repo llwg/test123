@@ -96,7 +96,7 @@ body
 
 h1 { font-size: 2.2rem; font-weight: bold; font-variation-settings: "wght" 500 }
 
-#welcome-grid { display: grid; grid-template-columns: repeat(6, 6.6rem); grid-auto-rows: 12rem; gap: 1rem .5rem }
+#welcome-grid { display: grid; grid-template-columns: repeat(6, 6.6rem); grid-auto-rows: 12rem; gap: 1rem .5rem; margin: 12rem 0 12rem 0 }
 .img-container { width: auto; overflow: hidden; display: flex; justify-content: center;}
 .img-container img { height: 100%; max-width: unset; justify-self: center }
 .img-container { transition: scale ease 0.2s }
@@ -155,9 +155,10 @@ nav { font-size: 1.6rem }
 nav { display: flex; flex-direction: column }
 
 nav summary
-	{ display: block
+	{ list-style: none
 	; user-select: none
 	}
+nav summary::before { content: "\200B" }
 
 nav summary:hover, nav details[open] summary { font-style: italic }
 

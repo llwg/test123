@@ -17,7 +17,7 @@
 
 1. generate site by running things. this can be done hopefully by running `./run.sh` in the `website/` directory
 
-2. host local version of site in whatever way u can. here is way that i have found works on current computer: `python3 -m http.server 8000`. run this in the `out/` directory. then it will host ur website at url `localhost:8000`. then u can put that in ur web browser and it will display!!
+2. host local version of site. you can do this with `./tool.js host_local` hopefully (ran in the root repository directory)
 
 ## how to add film .
 
