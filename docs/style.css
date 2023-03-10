@@ -96,17 +96,8 @@ body
 
 h1 { font-size: 2.2rem; font-weight: bold; font-variation-settings: "wght" 500 }
 
-#welcome-grid { display: grid; grid-template-columns: repeat(6, 6.6rem); grid-auto-rows: 12rem; gap: 1rem .5rem; margin: 7rem 0 7rem 0 }
-.img-container { width: auto; overflow: hidden; display: flex; justify-content: center;}
-.img-container img { height: 100%; max-width: unset; justify-self: center }
-.img-container { transition: scale ease 0.2s }
-.img-container:hover { scale: 1.05 }
-.img-container.shrunken { scale: .98 }
-
-.two { grid-column-end: span 2 }
-.thr { grid-column-end: span 3 }
-.four { grid-column-end: span 4 }
-.six { grid-column-end: span 6 }
+#welcome-grid { display: grid; gap: .6rem }
+.img-container { display: flex }
 
 #name { color: var(--idk-color) }
 
@@ -208,4 +199,22 @@ nav details a
 
 	nav a:hover > .thumb { visibility: visible; opacity: 0.9; transition: opacity 0.1s ease-in-out; }
 	nav .current-page:hover .thumb { opacity: 0 }
+
+	/* welcome grid */
+	#welcome-grid { grid-auto-rows: 12rem; grid-template-columns: repeat(6, 6.6rem); gap: 1rem .5rem; margin: 7rem 0 7rem 0 }
+	.img-container
+		{ width: auto
+		; overflow: hidden
+		; display: flex
+		; justify-content: center
+		; transition: scale ease 0.2s
+		}
+	.img-container img { height: 100%; max-width: unset; justify-self: center }
+	.img-container:hover { scale: 1.05 }
+	.img-container.shrunken { scale: .98 }
+
+	.two { grid-column-end: span 2 }
+	.thr { grid-column-end: span 3 }
+	.four { grid-column-end: span 4 }
+	.six { grid-column-end: span 6 }
 }
