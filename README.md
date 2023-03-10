@@ -46,3 +46,11 @@ here is history of commands i used
   102  git commit -m 'my change'
   103  git push origin main
 ```
+
+## `./tool.js`
+
+### `./tool.js normalize_stills`
+This will rename all stills (which are expected to be `docs/media/<film code thing>/<a number>.<file extension>`) so that the first still is named `1.<file extension>`, the second is named `2.<file extension>`, and so on.
+
+note: you can name stuff with decimals (e.g. `2.2.jpg`) to reorder stuff nicely
+
