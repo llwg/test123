@@ -62,16 +62,16 @@ const short2stills = short => [...expandGlobSync(`docs/media/${short}/*.jpg`)]
 	.sort((x, y) => +x.name.match(/\d+/)[0] - +y.name.match(/\d+/)[0])
 
 const pages = await Promise.all(
-	[{ group: null, title: 'index', lines: home_md}, ...cats2.map(cat => cat.pages).flat()]
-	.map(async ({ group, title, lines, medium, youtube }) => {
+	[{ group: null, title: 'Jolinna Li', short: 'index', lines: home_md}, ...cats2.map(cat => cat.pages).flat()]
+	.map(async ({ group, title, short, lines, medium, youtube }) => {
 
 		const desc_content = await pandoc_markdown(lines)
 
-		const short = title2short(title)
+		short ??= title2short(title)
 
 		const stuff = medium // film page?
 			? `<div class=film-intro><h2 class=title>${title}</h2><div class=film-medium>${medium}</div>${desc_content}</div>`
-			: `<div>${title === 'index' ? '' : `<h2>${title}</h2>`}</div>${desc_content}` // home page?
+			: `${short === 'index' ? '' : `<div><h2>${title}</h2></div>`}${desc_content}` // home page?
 
 		const yt = youtube
 			? `<iframe class=film-yt src="https://www.youtube.com/embed/${youtube}" title="YouTube player for ${title}" frameborder=0 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`
@@ -82,9 +82,9 @@ const pages = await Promise.all(
 
 		const stills = ss.length === 0
 			? ''
-			: `${ss.map((f, i) => `<img class=still src='media/${short}/${f.name}'>`).join('')}`
+			: `<div class=stills>${ss.map((f, i) => `<img class=still src='media/${short}/${f.name}'>`).join('')}</div>`
 
-		return { group, title, medium, short, content: stuff + yt + `<div class=stills>${stills}</div>` }
+		return { group, title, medium, short, content: stuff + yt + stills }
 	})
 )
 

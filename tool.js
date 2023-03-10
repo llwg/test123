@@ -1,6 +1,8 @@
-#!/usr/bin/env -S deno run --allow-run --allow-read --allow-write
+#!/usr/bin/env -S deno run --allow-run --allow-read --allow-write --allow-env --allow-net
 
 import { expandGlobSync } from "https://deno.land/std@0.170.0/fs/expand_glob.ts"
+import { serve } from "https://deno.land/std@0.178.0/http/server.ts";
+import { serveDir } from "https://deno.land/std@0.178.0/http/file_server.ts"
 
 const tmpify = path => `${path}.tmp`
 
@@ -85,15 +87,24 @@ async function normalize_stills() {
 	console.log('ok renamed the files!')
 }
 
+// code simplified from https://deno.land/std@0.178.0/http/file_server.ts?s=serveDir
+function host_local()
+{
+	serve(req => serveDir(req, { fsRoot: "docs" }))
+}
+
 const cmd_lookup =
 	{ clean
 	, normalize_stills
+	, host_local
 	}
 
 const f = cmd_lookup[Deno.args[0]]
 
 if (!f) {
 	console.error(`unknown command: ${Deno.args[0]}`)
+	console.error('here is list of all commands: ')
+	console.error(Object.keys(cmd_lookup))
 	Deno.exit(1)
 } else {
 	await f(...Deno.args.slice(1))

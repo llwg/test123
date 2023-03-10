@@ -1,4 +1,29 @@
-w e l c o m e
+<div id=welcome-grid>
+<div class='img-container thr'><img src='media/finding-eden/9.jpg'></div>
+<div class='img-container thr'><img src='media/me-and-my-babysitter/17.jpg'></div>
+
+<div class='img-container two'><img src='media/111-film/1.jpg'></div>
+<div class='img-container two'><img src='media/111-film/5.jpg'></div>
+<div class='img-container two'><img src='media/growing-and-leaving/1.jpg'></div>
+
+<div class='img-container thr'><img src='media/good-goods/6.jpg'></div>
+<div class='img-container thr'><img src='media/finding-eden/11.jpg'></div>
+
+<div class='img-container six'><img src='media/eyes-on-me/3.jpg'></div>
+
+<div class='img-container thr'><img src='media/finding-eden/13.jpg'></div>
+<div class='img-container thr'><img src='media/finding-eden/5.jpg'></div>
+
+<div class='img-container two'><img src='media/growing-and-leaving/3.jpg'></div>
+<div class='img-container two'><img src='media/jazz-club/8.jpg'></div>
+<div class='img-container two'><img src='media/jazz-club/1.jpg'></div>
+
+<div class='img-container thr'><img src='media/finding-eden/3.jpg'></div>
+<div class='img-container thr'><img src='media/barbies-bitch-bites-back/4.jpg'></div>
+
+<div class='img-container thr'><img src='media/me-and-my-babysitter/14.jpg'></div>
+<div class='img-container thr'><img src='media/me-and-my-babysitter/18.jpg'></div>
+</div>
 
 # Narrative
 

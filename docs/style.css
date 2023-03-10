@@ -96,6 +96,18 @@ body
 
 h1 { font-size: 2.2rem; font-weight: bold; font-variation-settings: "wght" 500 }
 
+#welcome-grid { display: grid; grid-template-columns: repeat(6, 6.6rem); grid-auto-rows: 12rem; gap: 1rem .5rem }
+.img-container { width: auto; overflow: hidden; display: flex; justify-content: center;}
+.img-container img { height: 100%; max-width: unset; justify-self: center }
+.img-container { transition: scale ease 0.2s }
+.img-container:hover { scale: 1.05 }
+.img-container.shrunken { scale: .98 }
+
+.two { grid-column-end: span 2 }
+.thr { grid-column-end: span 3 }
+.four { grid-column-end: span 4 }
+.six { grid-column-end: span 6 }
+
 #name { color: var(--idk-color) }
 
 nav .title
@@ -133,6 +145,7 @@ h1 { position: relative }
 .film-yt { width: 100%; aspect-ratio: 16/9 }
 
 #content { display: grid; gap: 2rem; grid-auto-rows: max-content }
+#content { transition: opacity ease-in-out 0.3s }
 
 hr { width: 100%; border: none; height: 1px; background-color: var(--main-text-color); opacity: 0.8 }
 
