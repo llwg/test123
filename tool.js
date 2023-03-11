@@ -2,7 +2,7 @@
 
 import { expandGlobSync } from "https://deno.land/std@0.170.0/fs/expand_glob.ts"
 import { serve } from "https://deno.land/std@0.178.0/http/server.ts";
-import { serveDir } from "https://deno.land/std@0.178.0/http/file_server.ts"
+import { serveFile, serveDir } from "https://deno.land/std@0.178.0/http/file_server.ts"
 
 const tmpify = path => `${path}.tmp`
 
@@ -90,7 +90,15 @@ async function normalize_stills() {
 // code simplified from https://deno.land/std@0.178.0/http/file_server.ts?s=serveDir
 function host_local()
 {
-	serve(req => serveDir(req, { fsRoot: "docs" }))
+	serve(req => {
+		const path = new URL(req.url).pathname
+		if (!path.match(/^\/$|\.\w+$/)) {
+			console.log(`rewrite ${path} --> docs${path}.html`)
+			return serveFile(req, `docs${path}.html`)
+		} else {
+			return serveDir(req, { fsRoot: "docs" })
+		}
+	})
 }
 
 const cmd_lookup =

@@ -39,8 +39,8 @@ const tag = x => y => `<${x}>${y}</${x}>`
 
 // normal form for links
 const short2path = short => short === 'index'
-	? 'index.html'
-	: `${short}.html`
+	? '/'
+	: `${short}`
 
 const navstuff = curr => navs.map(g => {
 
