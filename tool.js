@@ -4,8 +4,6 @@ import { expandGlobSync } from "https://deno.land/std@0.170.0/fs/expand_glob.ts"
 import { serve } from "https://deno.land/std@0.178.0/http/server.ts";
 import { serveFile, serveDir } from "https://deno.land/std@0.178.0/http/file_server.ts"
 
-const tmpify = path => `${path}.tmp`
-
 const ENC = new TextEncoder()
 const run_bash = async cmd => {
 	const p = Deno.run({ cmd: ['bash'], stdin: 'piped' })
@@ -17,6 +15,18 @@ const run_bash = async cmd => {
 const run_cmd = cmd => {
 	const p = Deno.run({ cmd })
 	return p.status()
+}
+
+// [a] -> (a -> bool) -> [[a], [a]]
+Array.prototype.partition = function(f) {
+	const xs = []
+	const ys = []
+	for (const x of this) {
+		if (f(x)) xs.push(x)
+		else ys.push(x)
+	}
+	return [xs, ys]
+
 }
 
 function waitfor_yes(txt) {
@@ -37,7 +47,7 @@ async function clean() {
 	console.log(`OK cleaned!! (status: ${JSON.stringify(status)})`)
 }
 
-async function normalize_stills() {
+async function rename_stills() {
 
 	const fs = [...expandGlobSync(`docs/media/*/*`)]
 
@@ -45,25 +55,35 @@ async function normalize_stills() {
 
 	const groups = {}
 
-	for (const { path, name } of fs) {
-		const match = path.match(/([\w-]+)\/(\d+\.?\d*)\.(\w+)$/)
+	for (const { path, name: filename } of fs) {
+		const match = path.match(/\/([^\/]+)\/([^\/]+)\.(\w+)$/)
 		if (!match) throw `unexpected filename: ${path}`
-		const [, short, str_n, ext] = match
 
-		if (!groups[short]) groups[short] = []
+		const [, short, name, ext] = match
 
-		groups[short].push([{path, name}, +str_n, ext])
+		if (filename !== `${name}.${ext}`) throw `program logic error: ${filename}`
+
+		groups[short] ??= []
+		groups[short].push({ short, name, n: +name, ext })
 	}
 
 	const changes = []
 
 	for (const [short, xs] of Object.entries(groups)) {
-		xs.sort(([, a], [, b]) => a - b)
+		const [not_nums, nums] = xs.partition(x => isNaN(x.n))
+		nums.sort((a, b) => a.n - b.n)
 		let i = 1
-		for (const [{path, name}, _, ext] of xs) {
+		for (const { name, ext } of nums) {
+			const old_name = `${name}.${ext}`
 			const new_name = `${i}.${ext}`
-			if (new_name !== name) changes.push([path, `docs/media/${short}/${new_name}`, `${short}/${name} --> ${short}/${new_name}`])
+			if (new_name !== old_name)
+				changes.push([`${short}/${old_name}`, `${short}/${new_name}`])
 			i += 1
+		}
+
+		// currently no sorting but could do sorting if needed in future maybe
+		for (const { name, ext } of not_nums) {
+			changes.push([`${short}/${name}.${ext}`, `${short}/${i++}.${ext}`])
 		}
 	}
 
@@ -72,19 +92,76 @@ async function normalize_stills() {
 		Deno.exit(0)
 	}
 
-	console.log('=== changes to be made ===')
+	console.log('%c=== changes to be made ===', 'color: #f0f')
 
-	console.log(changes.map(([,,x]) => x).join('\n'))
+	for (const [x, y] of changes) {
+		console.log(`${x} %c==> %c${y}`, 'color: #f0f', 'color: unset')
+	}
 
 	waitfor_yes('are you sure you want to make these changes?')
 
-	await Promise.all(changes.map(([x, y]) => Deno.rename(x, tmpify(y))))
+	console.log('moving files to temporary thing...')
+	await Promise.all(changes.map(([x, _]) => Deno.rename(`docs/media/${x}`, `docs/media/${x}.tmp`)))
+	console.log('OK')
 
-	console.log('moved files to temporary thing...')
+	console.log('moving temporary things back renamed...')
+	await Promise.all(changes.map(([x, y]) => Deno.rename(`docs/media/${x}.tmp`, `docs/media/${y}`)))
+	console.log('OK all done!')
+}
 
-	await Promise.all(changes.map(([_, y]) => Deno.rename(tmpify(y), y)))
+async function stills2webp() {
 
-	console.log('ok renamed the files!')
+	const fs = [...expandGlobSync(`docs/media/*/*`)]
+
+	if (!fs.every(f => f.isFile)) throw 'why is there directory?'
+
+	const changes = []
+	const known_extensions = new Set(['jpg', 'png', 'webp'])
+
+	for (const { path, name: filename } of fs) {
+		const match = path.match(/\/([^\/]+)\/([^\/]+)\.(\w+)$/)
+		if (!match) throw `unexpected filename: ${path}`
+
+		const [, short, name, ext] = match
+
+		if (filename !== `${name}.${ext}`) throw `program logic error: ${filename}`
+		if (!known_extensions.has(ext)) throw `unrecognized file extension: ${filename}`
+
+		if (ext !== 'webp') {
+			const src = `${short}/${name}.${ext}`
+			const dst = `${short}/${name}.webp`
+			try { // ugly logic for `push change if nothing is in dst spot`
+				await Deno.stat(`docs/media/${dst}`)
+				throw `i would need to overwrite this file (please move it somewhere else): ${dst}`
+			} catch (e) {
+				if (e.name === 'NotFound')
+					changes.push([src, dst])
+				else
+					throw e
+			}
+		}
+	}
+
+	if (changes.length === 0) {
+		console.log('no changes to be made all good!')
+		Deno.exit(0)
+	}
+
+	console.log('%c=== changes to be made ===', 'color: #f0f')
+
+	for (const [x, y] of changes) {
+		console.log(`${x} %c==> %c${y}`, 'color: #f0f', 'color: unset')
+	}
+
+	waitfor_yes('are you sure you want to make these changes?')
+
+	console.log('converting to webp...')
+	await Promise.all(changes.map(([x, y]) => run_cmd(['convert', `docs/media/${x}`, `docs/media/${y}`])))
+	console.log('OK!')
+
+	console.log('removing original images...')
+	await Promise.all(changes.map(([x, _]) => Deno.remove(`docs/media/${x}`)))
+	console.log('OK all done!')
 }
 
 // code simplified from https://deno.land/std@0.178.0/http/file_server.ts?s=serveDir
@@ -103,8 +180,9 @@ function host_local()
 
 const cmd_lookup =
 	{ clean
-	, normalize_stills
+	, rename_stills
 	, host_local
+	, stills2webp
 	}
 
 const f = cmd_lookup[Deno.args[0]]

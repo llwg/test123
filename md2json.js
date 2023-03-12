@@ -58,7 +58,7 @@ const cats2 = cats.map( ({ title, pages }) =>
 
 const title2short = x => x.toLowerCase().replace(/[^\w\s]/g, '').replace(/\s+/g, '-')
 
-const short2stills = short => [...expandGlobSync(`docs/media/${short}/*.jpg`)]
+const short2stills = short => [...expandGlobSync(`docs/media/${short}/*`)]
 	.sort((x, y) => +x.name.match(/\d+/)[0] - +y.name.match(/\d+/)[0])
 
 const pages = await Promise.all(
@@ -79,20 +79,21 @@ const pages = await Promise.all(
 		console.error(youtube, title)
 
 		const ss = short2stills(short)
+			.map(f => `media/${short}/${f.name}`)
 
 		const stills = ss.length === 0
 			? ''
-			: `<div class=stills>${ss.map((f, i) => `<img class=still src='media/${short}/${f.name}'>`).join('')}</div>`
+			: `<div class=stills>${ss.map(src => `<img class=still src='${src}'>`).join('')}</div>`
 
-		return { group, title, medium, short, content: stuff + yt + stills }
+		return { group, title, medium, short, content: stuff + yt + stills, thumb: ss[0] }
 	})
 )
 
 const out = {}
 
-for (const { group, title, short, content, medium } of pages) {
-	if (out[short]) throw 'ununique short title: ' + short
-	out[short] = {group, title, short, content, medium } // short is redundant but whatever bestie
+for (const p of pages) {
+	if (out[p.short]) throw 'ununique short title: ' + p.short
+	out[p.short] = p
 }
 
 console.log(JSON.stringify(out, null, '\t'))
