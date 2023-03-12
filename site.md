@@ -1,28 +1,27 @@
 <div id=welcome-grid>
-<div class='img-container thr'><img src='media/finding-eden/9.jpg'></div>
-<div class='img-container thr'><img src='media/me-and-my-babysitter/17.jpg'></div>
+<div class='img-container thr'><img src='media/finding-eden/14.webp'></div>
+<div class='img-container thr'><img src='media/me-and-my-babysitter/5.webp'></div>
 
-<div class='img-container two'><img src='media/111-film/1.jpg'></div>
-<div class='img-container two'><img src='media/111-film/5.jpg'></div>
-<div class='img-container two'><img src='media/growing-and-leaving/1.jpg'></div>
+<div class='img-container two'><img src='media/col-and-olga/1.webp'></div>
+<div class='img-container two'><img src='media/haiku-film/3.webp'></div>
+<div class='img-container two'><img src='media/brunch/3.webp'></div>
 
-<div class='img-container thr'><img src='media/good-goods/6.jpg'></div>
-<div class='img-container thr'><img src='media/finding-eden/11.jpg'></div>
+<div class='img-container thr'><img src='media/barbies-bitch-bites-back/2.webp'></div>
+<div class='img-container thr'><img src='media/me-and-my-babysitter/16.webp'></div>
 
-<div class='img-container six'><img src='media/eyes-on-me/3.jpg'></div>
+<div class='img-container two'><img src='media/jazz-club/5.webp'></div>
+<div class='img-container two'><img src='media/jazz-club/8.webp'></div>
+<div class='img-container two'><img src='media/111-film/8.webp'></div>
 
-<div class='img-container thr'><img src='media/finding-eden/13.jpg'></div>
-<div class='img-container thr'><img src='media/finding-eden/5.jpg'></div>
+<div class='img-container six'><img src='media/eyes-on-me/8.webp'></div>
 
-<div class='img-container two'><img src='media/growing-and-leaving/3.jpg'></div>
-<div class='img-container two'><img src='media/jazz-club/8.jpg'></div>
-<div class='img-container two'><img src='media/jazz-club/1.jpg'></div>
+<div class='img-container thr'><img src='media/me-and-my-babysitter/19.webp'></div>
+<div class='img-container thr'><img src='media/good-goods/10.webp'></div>
 
-<div class='img-container thr'><img src='media/finding-eden/3.jpg'></div>
-<div class='img-container thr'><img src='media/barbies-bitch-bites-back/4.jpg'></div>
+<div class='img-container six'><img src='media/eyes-on-me/4.webp'></div>
 
-<div class='img-container thr'><img src='media/me-and-my-babysitter/14.jpg'></div>
-<div class='img-container thr'><img src='media/me-and-my-babysitter/18.jpg'></div>
+<div class='img-container thr'><img src='media/flaming-fists/1.webp'></div>
+<div class='img-container thr'><img src='media/the-redemption-of-mr-greg/2.webp'></div>
 </div>
 
 # Narrative
@@ -136,6 +135,6 @@ a dialogue between two people talking to each other saying things
 
 Jolinna Li is a filmmaker based in Charlottesville, Virginia. She is a current Studio Art student at the University of Virginia concentrating in Cinematography. With experience in working with both traditional film and HD cameras, Jolinna likes exploring realism, cultural identity, relationship dynamics, and love in her work. Films she has worked on have been selected by the Virginia Film Festival and screened at the McGuffey Art center. She has also been involved in the Adrenaline project and works with Lighthouse Studios as a freelance editor.
 
-<div id=about-pictures><img src=media/profile/1.jpg><img src=media/profile/2.jpg><img src=media/profile/3.jpg><img src=media/profile/4.jpg></div>
+<div id=about-pictures><img src=media/profile/1.webp><img src=media/profile/2.webp><img src=media/profile/3.webp><img src=media/profile/4.webp></div>
 
 Contact: <a href='mailto:jolinnayli@gmail.com'>jolinnayli@gmail.com</a>
