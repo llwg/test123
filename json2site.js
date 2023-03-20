@@ -77,7 +77,7 @@ const generate_page = page => `<!DOCTYPE html>
 <body>
 	<div id=header>
 		<nav>
-			<h1><a short=index id=name href=${short2path('index')}>Jolinna</a></h1>
+			<h1><a short=index id=name href=${short2path('index')}>Jolinna Li</a></h1>
 			${navstuff(page)}
 		</nav>
 	</div>
