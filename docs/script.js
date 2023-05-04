@@ -1,3 +1,4 @@
+// { short: { title, page, group } }
 const json = fetch('./site.json').then(r => r.json())
 
 const CONTENT = document.querySelector('#content')
@@ -29,7 +30,7 @@ const display = short =>
 
 		CONTENT.addEventListener('transitionend', e => {
 			document.title = j[short].title
-			CONTENT.innerHTML = j[short].content
+			CONTENT.innerHTML = j[short].page
 			document.querySelectorAll('.current-page').forEach(e => e.classList.remove('current-page'))
 			NAVAS.find(a => a.getAttribute('short') === short).classList.add('current-page') // css selector ok?
 			DETAILS.forEach(d => d.open = d.getAttribute('group') === j[short].group)

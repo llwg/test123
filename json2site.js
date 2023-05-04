@@ -1,8 +1,6 @@
-#!/usr/bin/env -S deno run --allow-write
+#!/usr/bin/env -S deno run --allow-write --allow-run
 
 import { readAll } from 'https://deno.land/std@0.177.0/streams/mod.ts'
-
-const title2short = x => x.toLowerCase().replace(/[^\w\s]/g, '').replace(/\s+/g, '-')
 
 Array.prototype.to_h = function() {
 	return Object.fromEntries(this)
@@ -16,9 +14,18 @@ Object.prototype.vals = function() {
 	return Object.values(this)
 }
 
-const unslurp = (path, str) => Deno.writeFile(path, new TextEncoder().encode(str))
+const ENC = new TextEncoder()
+const DEC = new TextDecoder()
+const pandoc_markdown = async md => {
+	const p = Deno.run({ cmd: ['pandoc'], stdout: 'piped', stdin: 'piped' })
+	await p.stdin.write(ENC.encode(md))
+	await p.stdin.close()
+	const out = await p.output()
+	p.close();
+	return DEC.decode(out)
+}
 
-const json = JSON.parse(new TextDecoder().decode(await readAll(Deno.stdin)))
+const pages = JSON.parse(new TextDecoder().decode(await readAll(Deno.stdin)))
 
 const counts = xs => {
 	const res = {}
@@ -27,35 +34,59 @@ const counts = xs => {
 	return res
 }
 
+// all groups across all pages
+const groups = pages
+	.filter(x => x.short !== 'index')
+	.map(x => x.group)
+
+const navs = [...new Set(groups)]
+
 // note: *should* keep order?
-const groups = counts(json.vals().map(x => x.group).filter(x => x))
+// `group`s that have more than 2 pages
+const cats = counts(groups)
 	.to_a()
 	.filter(x => x[1] > 1)
 	.map(x => x[0])
 
-const navs = [...new Set(json.vals().map(x => x.group).filter(x => x))]
+const page2page = async ({ short, title, content, yt, md, stills }) => {
+	const html = await pandoc_markdown(content)
 
-const tag = x => y => `<${x}>${y}</${x}>`
+	if (md) { // film page
+		const yt_disp = yt
+			? `<iframe class=film-yt src="https://www.youtube.com/embed/${yt}" title="YouTube player for ${title}" frameborder=0 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`
+			: ''
+		const stills_disp = stills.length === 0
+			? ''
+			: `<div class=stills>${stills.map(src => `<img class=still src='${src}'>`).join('')}</div>`
+
+		return `<div class=film-intro><h2 class=title>${title}</h2><div class=film-medium>${md}</div>${html}</div>`
+			+ yt_disp + stills_disp
+	} else if (short !== 'index') { // not index
+		return `<div><h2>${title}</h2></div>${html}`
+	} else {
+		return html
+	}
+}
 
 // normal form for links
 const short2path = short => short === 'index'
 	? '/'
 	: `${short}`
 
+// generate nav for `curr` page
 const navstuff = curr => navs.map(g => {
-
 	// special 'About' case -- whole page, not a group
-	if (!groups.includes(g)) {
-		const page = json.vals().find(({ group }) => g === group)
+	if (!cats.includes(g)) {
+		const page = pages.find(({ group }) => g === group)
 		return `<a short='${page.short}' href='${short2path(page.short)}'${page.short === curr.short ? ' class=current-page' : ''}>${g}</a>` // alert: bad hack
 	}
 
 	return `<details group='${g}' class=nav-category${g === curr.group ? ' open' : ''}>
 		<summary>${g}</summary>
-		${json.vals().filter(({group}) => g === group)
-			.map(({ title, short, medium, thumb }) => {
-				const thumbnail = medium
-					? `<img class=thumb src='${thumb}'>`
+		${pages.filter(({group}) => g === group)
+			.map(({ title, short, md, stills }) => {
+				const thumbnail = md
+					? `<img class=thumb src='${stills[0]}'>`
 					: ''
 				return `<a short='${short}' class='${curr.short === short ? 'current-page ' : ''}title' href='${short2path(short)}'>${thumbnail}${title}</a>`
 			})
@@ -63,9 +94,9 @@ const navstuff = curr => navs.map(g => {
 	</details>`
 }).join('')
 
-// page => html
-const generate_page = page => `<!DOCTYPE html>
-<title>${page.title}</title>
+// { ...page, page } => string
+const to_html = p => `<!DOCTYPE html>
+<title>${p.short === 'index' ? 'Jolinna Li' : p.title}</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta charset="UTF-8">
 
@@ -78,19 +109,26 @@ const generate_page = page => `<!DOCTYPE html>
 	<div id=header>
 		<nav>
 			<h1><a short=index id=name href=${short2path('index')}>Jolinna Li</a></h1>
-			${navstuff(page)}
+			${navstuff(p)}
 		</nav>
 	</div>
 	<div id=content>
-		${page.content}
+		${p.page}
 	</div>
 </body>
-<script>const short_base = '${page.short}'</script>
+<script>const short_base = '${p.short}'</script>
 <script src=script.js></script>
 `
 
-console.log(await Promise.all(json.to_a().map(async ([short, page]) => [short, await unslurp(`docs/${short}.html`, generate_page(page))])))
+const generated = await Promise.all(
+	pages.map(async p => ({...p, page: await page2page(p)}))
+)
 
-await unslurp('docs/site.json', JSON.stringify(json))//JSON.stringify(json.to_a().map(([x, y]) => [short2path(x), y]).to_h()))
+const dynamic = generated
+	.map(({ short, title, page, group }) => [short, { title, page, group }])
+	.to_h()
+
+await Promise.all(generated.map(async p => [p.short, await Deno.writeTextFile(`docs/${p.short}.html`, to_html(p))]))
+await Deno.writeTextFile('docs/site.json', JSON.stringify(dynamic))
 
 console.log('OK')
