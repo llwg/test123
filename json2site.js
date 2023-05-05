@@ -128,7 +128,16 @@ const dynamic = generated
 	.map(({ short, title, page, group }) => [short, { title, page, group }])
 	.to_h()
 
-await Promise.all(generated.map(async p => [p.short, await Deno.writeTextFile(`docs/${p.short}.html`, to_html(p))]))
-await Deno.writeTextFile('docs/site.json', JSON.stringify(dynamic))
+const describe = async (x, y) => {
+	await Deno.writeTextFile(x, y)
+	return `wrote to ${x} (${y.length} chars)`
+}
+
+const output = [
+	...await Promise.all(generated.map(p => describe(`docs/${p.short}.html`, to_html(p)))),
+	await describe('docs/site.json', JSON.stringify(dynamic)),
+]
+
+console.log(output.join('\n'))
 
 console.log('OK')

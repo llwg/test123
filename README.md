@@ -44,7 +44,8 @@ you can see exactly what short code a film has by browsing to its generated page
 2. copy any pictures you like into it
 	- note: the site will display the stills based on numeric file names, so make sure that your file names are numbers!! (e.g. `1.webp`, `2.webp`, etc.)
 		- see `./tool.js rename_stills` for helpful renaming tips!!
-3. regenerate website and you are done!!
+		- i would recommend converting everything to `webp` files for optimal compression and stuff. see `./tool.js stills2webp` for helpful tool thing!
+3. regenerate website (by running `./run.sh`) and you are done!!
 
 ## how to push changes to github
 
