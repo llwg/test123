@@ -17,7 +17,7 @@ const short2stills = short => [...expandGlobSync(`docs/media/${short}/*`)]
 
 let group = 'index'
 // [{ group, short, title, content }]
-const pages = [{ group: 'index', title: 'index', content: [] }]
+const pages = [{ group: 'index', title: 'Jolinna Li', short: 'index', content: [] }]
 for (const line of doc.split('\n')) {
 	let m = null
 	if (m = line.match(/^## (.+)/)) {
@@ -37,7 +37,7 @@ const pages_processed = pages.map(p => {
 	const short = title2short(p.title)
 	const content = p.content.join('\n').trim()
 	const stills = short2stills(short)
-	return { ...p, short, content, stills }
+	return { short, stills, ...p, content }
 })
 
 const out = {}
