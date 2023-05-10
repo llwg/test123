@@ -101,7 +101,6 @@ Learning how to shoot on film in my first semester, cut by hand. Explores light 
 
 Second analog film. A girl revisits childhood sites and sees a shadow of something she left behind. Plays with angles and disorientation.
 
-
 ## Brunch
 !md: 16 mm Color Negative Film
 !yt: qG45tsNTZmU?start=8
