@@ -26,9 +26,14 @@
 
 # Narrative
 
-## Ozymandias
+## Fairytale
 !md: Digital, blackmagic HD
-"potential new film that will be done by May"
+!yt: lN-jGt7pZR4
+An intimate short film that explores Grace's imaginary world as she goes on a quest to find an endangered bird, playing with ideas of friendship and realism through narration. 
+
+## Crosswalk
+!md: Digital, blackmagic HD
+Jolinna worked as director of photography on _Crosswalk_, a film about a college student haunted by her previous relationship. 
 
 ## Eyes On Me
 !md: Digital, blackmagic HD
@@ -39,37 +44,31 @@
 ## Me and My Babysitter
 !md: Digital, blackmagic HD
 !yt: OAnNDhukNuo
-
 How do we learn to do bad things? And how does our knowledge of evil inform our adolescence? These questions are explored in this film through learned transgressions. In a way, by learning how to be cruel, a girl grows up.
 
 ## Finding Eden
 !md: Digital, blackmagic HD
 !yt: qpZ0cuob_Io
-
 An Adrenaline Project Film, this was made in 72 hours given the prompt of a coming-of-age film. A girl’s world comes crumbling down when she discovers her mother’s secret. She must learn to stand up for herself and her dreams.
 
 ## Barbie's Bitch Bites Back
 !md: Digital
 !yt: W5yFtkCnW5I
-
 Intermediate Cinematography narrative editing project where the class brainstorms and collaboratively films and then edit in groups of two. In this project we unpack the meaning of femininity and the female wrath.
 
 ## Col and Olga
 !md: Analog, 16mm color film
 !yt: eJeZrADhFrg
-
 A play on objects and separation as two "lovers" try to find each other through the urban DC transportation.
 
 ## Jazz Club
 !md: Analog, 16mm b&w reversal film
 !yt: W8Jgeo6rx6k
-
 Class project shot on film. Night at the jazz club gone wrong.
 
 ## Good Goods
 !md: Digital
 !yt: kXE2FefSthU
-
 Two troubled teenagers decide to steal some baking equipment, but one of them gets a chance of redemption and must confront her past.
 
 ## Flaming Fists
@@ -84,6 +83,11 @@ An old bitter soul has a magical encounter that pushes him to reconnect with his
 
 
 # Experimental
+
+## wreck
+!md: Digital, blackmagic HD
+
+Through visual and aural language, this film opens discussion between the impermanence of the individual alongside the irreparable effects humankind has had on the environment. In three parts inspired by Percy Shelley's poem 'Ozymandias', _wreck_ uses three distinct visual modes to convey its message.
 
 ## 1:11 film
 !md: 16mm B&W Reversal Film
@@ -101,7 +105,6 @@ Second analog film. A girl revisits childhood sites and sees a shadow of somethi
 ## Brunch
 !md: 16 mm Color Negative Film
 !yt: qG45tsNTZmU?start=8
-
 Mel’s Cafe is an old place on West Main Street. The people who go there know it for its hearty brunch and newspapers pasted over its walls. I wanted to capture a mundane moment, have it mingle with my own nostalgia through the audio.
 
 ## Kettle Boils While Watched
