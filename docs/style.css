@@ -129,7 +129,8 @@ a:hover, a.current-page
 	; color: var(--idk-color)
 	}
 
-#about-pictures { display: grid; grid-template-columns: 1fr 1fr }
+#about-pictures-a { padding: 0 1rem 0 1rem }
+#about-pictures-b { display: grid; grid-template-columns: 1fr 1fr }
 
 h1 { position: relative }
 
@@ -150,6 +151,9 @@ nav summary
 	; user-select: none
 	}
 nav summary::marker { content: "" }
+nav summary::-webkit-details-marker
+	{ display: none;
+	}
 
 nav summary:hover, nav details[open] summary { font-style: italic }
 
