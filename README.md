@@ -158,3 +158,7 @@ for example if you have the following files (in `docs/media/`):
 converts stills to webp. i think webp is current web standard for photos. cool!
 
 note: uses imagemagick's `convert` so make sure you have imagemagick!!
+
+# notes to self
+
+google fonts woff2 is variable i think

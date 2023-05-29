@@ -51,27 +51,27 @@ table {
 
 @font-face {
 	font-family: myfont1;
-	src: url(EBGaramond-VariableFont_wght.ttf);
+	src: url(latin-eb.woff2);
 	font-display: swap;
 }
 
 @font-face {
 	font-family: myfont1;
 	font-style: italic;
-	src: url(EBGaramond-Italic-VariableFont_wght.ttf);
+	src: url(latin-eb-italic.woff2);
 	font-display: swap;
 }
 
 @font-face {
 	font-family: modern-font-haha;
-	src: url(RobotoMono-VariableFont_wght.ttf);
+	src: url(latin-roboto.woff2);
 	font-display: swap;
 }
 
 @font-face {
 	font-family: modern-font-haha;
 	font-style: italic;
-	src: url(RobotoMono-Italic-VariableFont_wght.ttf);
+	src: url(latin-roboto-italic.woff2);
 	font-display: swap;
 }
 
@@ -80,7 +80,7 @@ table {
 	; --idk-color: #f58ea9
 	; --main-bg-color: black
 	; font-family: 'myfont1', serif
-	; font-variation-settings: "wght" 450
+	; font-variation-settings: "wght" 500
 	}
 
 html { background-color: var(--main-bg-color); color: var(--main-text-color) }
@@ -103,18 +103,22 @@ h1 { font-size: 2.2rem; font-weight: bold; font-variation-settings: "wght" 500 }
 
 nav .title
 	{ font-family: modern-font-haha, monospace
-	; font-variation-settings: "wght" 320
+	; font-variation-settings: "wght" 300
 	; font-size: 0.9rem
 	; margin-left: 0.5rem
 	}
 
 .stills { display: grid; gap: 1rem }
 
-.film-medium { font-family: modern-font-haha, monospace; font-style: italic; margin-bottom: 0.6rem }
+.film-medium
+	{ font-family: modern-font-haha, monospace
+	; font-style: italic
+	; margin-bottom: 0.6rem
+	}
 
 h2.title { font-family: modern-font-haha, monospace }
 
-h2 { font-size: 2rem; font-variation-settings: "wght" 550 }
+h2 { font-size: 2rem; font-variation-settings: "wght" 500 }
 
 p { text-align: justify }
 
