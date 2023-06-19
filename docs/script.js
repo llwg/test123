@@ -128,8 +128,6 @@ function set_up_fun()
 
 	const svg = d3.select('#fun')
 
-	console.log(svg)
-
 	const linkBACK = svg.append("g")
 		.attr('stroke', '#000')
 		.attr("stroke-linecap", 'round')

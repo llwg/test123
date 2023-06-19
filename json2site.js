@@ -114,7 +114,7 @@ const to_html = p => `<!DOCTYPE html>
 			${navstuff(p)}
 		</nav>
 	</div>
-	<div id=content>
+	<div id=content${p.short==='index' ? ' class=index-content' : ''}>
 		${p.page}
 	</div>
 </body>
