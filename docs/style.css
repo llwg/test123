@@ -50,15 +50,14 @@ table {
 /** hello **/
 
 @font-face {
-	font-family: myfont1;
-	src: url(latin-eb.woff2);
+	font-family: comic-backup;
+	src: url(comic-sans.woff);
 	font-display: swap;
 }
 
 @font-face {
-	font-family: myfont1;
-	font-style: italic;
-	src: url(latin-eb-italic.woff2);
+	font-family: times-backup;
+	src: url(times.woff);
 	font-display: swap;
 }
 
@@ -68,24 +67,23 @@ table {
 	font-display: swap;
 }
 
-@font-face {
-	font-family: modern-font-haha;
-	font-style: italic;
-	src: url(latin-roboto-italic.woff2);
-	font-display: swap;
-}
+em { font-style: italic }
+img { max-width: 100% }
+
+#name { font-size: 2.2rem }
+h1 { font-size: 2.2rem; font-weight: bold }
+h2 { font-size: 2rem }
 
 :root
-	{ --main-text-color: white
+	{ --main-text-color: black
 	; --idk-color: #f58ea9
-	; --main-bg-color: black
-	; font-family: 'myfont1', serif
-	; font-variation-settings: "wght" 500
+	; --main-bg-color: white
+	; font-family: times-backup,'Times New Roman', serif
 	}
 
 html { background-color: var(--main-bg-color); color: var(--main-text-color) }
 
-img { max-width: 100% }
+svg { height: 100%; width: 100%; border: 1px solid }
 
 body
 	{ margin: 1rem
@@ -94,16 +92,9 @@ body
 	; gap: 2rem
 	}
 
-h1 { font-size: 2.2rem; font-weight: bold; font-variation-settings: "wght" 500 }
-
-#welcome-grid { display: grid; gap: .6rem }
-.img-container { display: flex }
-
-#name { color: var(--idk-color) }
-
-nav .title
+nav details li
 	{ font-family: modern-font-haha, monospace
-	; font-variation-settings: "wght" 300
+	; font-variation-settings: "wght" 350
 	; font-size: 0.9rem
 	; margin-left: 0.5rem
 	}
@@ -118,8 +109,6 @@ nav .title
 
 h2.title { font-family: modern-font-haha, monospace }
 
-h2 { font-size: 2rem; font-variation-settings: "wght" 500 }
-
 p { text-align: justify }
 
 a
@@ -127,13 +116,7 @@ a
 	; color: var(--main-text-color)
 	}
 
-a:hover, a.current-page
-	{ font-weight: bold
-	; font-variation-settings: "wght" 700
-	; color: var(--idk-color)
-	}
-
-#about-pictures-a { padding: 0 1rem 0 1rem }
+#about-pictures-a, #about-pictures-b { padding: 0 1rem 0 1rem }
 #about-pictures-b { display: grid; grid-template-columns: 1fr 1fr }
 
 h1 { position: relative }
@@ -145,8 +128,6 @@ h1 { position: relative }
 
 hr { width: 100%; border: none; height: 1px; background-color: var(--main-text-color); opacity: 0.8 }
 
-.thumb { display: none }
-
 nav { font-size: 1.6rem }
 nav { display: flex; flex-direction: column }
 
@@ -155,23 +136,24 @@ nav summary
 	; user-select: none
 	}
 nav summary::marker { content: "" }
-nav summary::-webkit-details-marker
-	{ display: none;
+nav summary::-webkit-details-marker { display: none }
+
+nav summary:hover, nav details[open] summary { font-family: 'Comic Sans MS', comic-backup, sans-serif; font-size: 100% }
+a:hover, a.current-page
+	{ font-weight: bold
+	; font-variation-settings: "wght" 450
+	; color: var(--idk-color)
 	}
 
-nav summary:hover, nav details[open] summary { font-style: italic }
+details[group='narrative'] summary { font-weight: bold }
+details[group='experimental'] summary { font-style: italic }
+details[group='writing'] summary { text-decoration: underline }
 
-nav details
-	{ display: flex
-	; flex-direction: column
-	}
-
-nav details a
-	{ width: max-content
-	}
+.index-content { order: -1 }
 
 /* desktop */
 @media (min-width: 44rem) {
+	.index-content { order: 0 }
 	/* body { background-color: #aea } */
 	body
 		{ grid-template-columns: 15rem 1fr
@@ -181,21 +163,22 @@ nav details a
 	html { display: flex; justify-content: center }
 }
 
-/* 2-column stills */
+/* mobile */
 @media (min-width: 56rem) {
-	/*.stills { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; margin: 0 -2rem 0 -2rem }*/
 	body { margin: 3rem; gap: 12% }
 }
 
 /* thumbnails */
-@media (min-width: 70rem) {
+.thumb { display: none }
+
+@media (min-width: 78rem) {
 	nav a { position: relative }
 	.thumb
 		{ display: block
 		; max-width: 10rem
 		; max-height: none
 		; position: absolute
-		; left: -11.2rem
+		; left: -12rem
 		; top: 50%
 		; transform: translateY(-50%);
 		; visibility: visible
@@ -207,22 +190,4 @@ nav details a
 
 	nav a:hover > .thumb { visibility: visible; opacity: 0.9; transition: opacity 0.1s ease-in-out; }
 	nav .current-page:hover .thumb { opacity: 0 }
-
-	/* welcome grid */
-	#welcome-grid { grid-auto-rows: 12rem; grid-template-columns: repeat(6, 6.6rem); gap: 1rem .5rem; margin: 7rem 0 7rem 0 }
-	.img-container
-		{ width: auto
-		; overflow: hidden
-		; display: flex
-		; justify-content: center
-		; transition: scale ease 0.2s
-		}
-	.img-container img { height: 100%; max-width: unset; justify-self: center }
-	.img-container:hover { scale: 1.05 }
-	.img-container.shrunken { scale: .98 }
-
-	.two { grid-column-end: span 2 }
-	.thr { grid-column-end: span 3 }
-	.four { grid-column-end: span 4 }
-	.six { grid-column-end: span 6 }
 }

@@ -81,16 +81,18 @@ const navstuff = curr => navs.map(g => {
 		return `<a short='${page.short}' href='${short2path(page.short)}'${page.short === curr.short ? ' class=current-page' : ''}>${g}</a>` // alert: bad hack
 	}
 
-	return `<details group='${g}' class=nav-category${g === curr.group ? ' open' : ''}>
+	return `<details group='${g}'${g === curr.group ? ' open' : ''}>
 		<summary>${g}</summary>
+		<ul>
 		${pages.filter(({group}) => g === group)
 			.map(({ title, short, md, stills }) => {
 				const thumbnail = md
 					? `<img class=thumb src='${stills[0]}'>`
 					: ''
-				return `<a short='${short}' class='${curr.short === short ? 'current-page ' : ''}title' href='${short2path(short)}'>${thumbnail}${title}</a>`
+				return `<li><a short='${short}' class='${curr.short === short ? 'current-page ' : ''}title' href='${short2path(short)}'>${thumbnail}${title}</a>`
 			})
 			.join('')}
+		</ul>
 	</details>`
 }).join('')
 
@@ -108,7 +110,7 @@ const to_html = p => `<!DOCTYPE html>
 <body>
 	<div id=header>
 		<nav>
-			<h1><a short=index id=name href=${short2path('index')}>Jolinna Li</a></h1>
+			<a short=index id=name href=${short2path('index')}>Jolinna Li</a>
 			${navstuff(p)}
 		</nav>
 	</div>
@@ -117,6 +119,12 @@ const to_html = p => `<!DOCTYPE html>
 	</div>
 </body>
 <script>const short_base = '${p.short}'</script>
+
+<script src="./d3.v7.min.js"></script>
+<script src="./d3-dispatch@3.js"></script>
+<script src="./d3-quadtree@3.js"></script>
+<script src="./d3-timer@3.js"></script>
+<script src="./d3-force@3.js"></script>
 <script src=script.js></script>
 `
 

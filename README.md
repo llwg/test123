@@ -161,4 +161,5 @@ note: uses imagemagick's `convert` so make sure you have imagemagick!!
 
 # notes to self
 
-google fonts woff2 is variable i think
+- google fonts woff2 is variable i think
+- details shouldnt have display?

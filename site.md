@@ -1,39 +1,15 @@
-<div id=welcome-grid>
-<div class='img-container thr'><img src='media/finding-eden/14.webp'></div>
-<div class='img-container thr'><img src='media/me-and-my-babysitter/5.webp'></div>
+<svg id=fun viewbox='-1,-1, 2, 2'></svg>
 
-<div class='img-container two'><img src='media/col-and-olga/1.webp'></div>
-<div class='img-container two'><img src='media/haiku-film/3.webp'></div>
-<div class='img-container two'><img src='media/brunch/3.webp'></div>
-
-<div class='img-container thr'><img src='media/barbies-bitch-bites-back/2.webp'></div>
-<div class='img-container thr'><img src='media/me-and-my-babysitter/16.webp'></div>
-
-<div class='img-container two'><img src='media/jazz-club/5.webp'></div>
-<div class='img-container two'><img src='media/jazz-club/8.webp'></div>
-<div class='img-container two'><img src='media/111-film/8.webp'></div>
-
-<div class='img-container six'><img src='media/eyes-on-me/8.webp'></div>
-
-<div class='img-container thr'><img src='media/me-and-my-babysitter/19.webp'></div>
-<div class='img-container thr'><img src='media/crosswalk/1.webp'></div>
-
-<div class='img-container six'><img src='media/eyes-on-me/4.webp'></div>
-
-<div class='img-container thr'><img src='media/flaming-fists/1.webp'></div>
-<div class='img-container thr'><img src='media/the-redemption-of-mr-greg/2.webp'></div>
-</div>
-
-# Narrative
+# narrative
 
 ## Fairytale
 !md: Digital, blackmagic HD
 !yt: lN-jGt7pZR4
-An intimate short film that explores Grace's imaginary world as she goes on a quest to find an endangered bird, playing with ideas of friendship and realism through narration. 
+An intimate short film that explores Grace's imaginary world as she goes on a quest to find an endangered bird, playing with ideas of friendship and realism through narration.
 
 ## Crosswalk
 !md: Digital, blackmagic HD
-Jolinna worked as director of photography on _Crosswalk_, a film about a college student haunted by her previous relationship. 
+Jolinna worked as director of photography on _Crosswalk_, a film about a college student haunted by her previous relationship.
 
 ## Eyes On Me
 !md: Digital, blackmagic HD
@@ -57,12 +33,12 @@ An Adrenaline Project Film, this was made in 72 hours given the prompt of a comi
 Intermediate Cinematography narrative editing project where the class brainstorms and collaboratively films and then edit in groups of two. In this project we unpack the meaning of femininity and the female wrath.
 
 ## Col and Olga
-!md: Analog, 16mm color film
+!md: Analog, 16-mm color film
 !yt: eJeZrADhFrg
 A play on objects and separation as two "lovers" try to find each other through the urban DC transportation.
 
 ## Jazz Club
-!md: Analog, 16mm b&w reversal film
+!md: Analog, 16-mm b&w reversal film
 !yt: W8Jgeo6rx6k
 Class project shot on film. Night at the jazz club gone wrong.
 
@@ -82,7 +58,7 @@ Torn between her love for taekwondo and familial expectations, Amy squares up fo
 An old bitter soul has a magical encounter that pushes him to reconnect with his daughter.
 
 
-# Experimental
+# experimental
 
 ## wreck
 !md: Digital, blackmagic HD
@@ -90,35 +66,35 @@ An old bitter soul has a magical encounter that pushes him to reconnect with his
 Through visual and aural language, this film opens discussion between the impermanence of the individual alongside the irreparable effects humankind has had on the environment. In three parts inspired by Percy Shelley's poem 'Ozymandias', _wreck_ uses three distinct visual modes to convey its message.
 
 ## 1:11 film
-!md: 16mm B&W Reversal Film
+!md: 16-mm B&W Reversal Film
 !yt: dyThu0-Eq-Q
 
 Learning how to shoot on film in my first semester, cut by hand. Explores light and motion.
 
 ## Growing and leaving
-!md: 16mm B&W Reversal Film
+!md: 16-mm B&W Reversal Film
 !yt: tmo5HYpJDSs
 
 Second analog film. A girl revisits childhood sites and sees a shadow of something she left behind. Plays with angles and disorientation.
 
 ## Brunch
-!md: 16 mm Color Negative Film
+!md: 16-mm Color Negative Film
 !yt: qG45tsNTZmU?start=8
 Mel’s Cafe is an old place on West Main Street. The people who go there know it for its hearty brunch and newspapers pasted over its walls. I wanted to capture a mundane moment, have it mingle with my own nostalgia through the audio.
 
 ## Kettle Boils While Watched
-!md: 16 mm Color Negative Film
+!md: 16-mm Color Negative Film
 !yt: qG45tsNTZmU?start=92
 
 Urban isolation, surveillance and anxiety explored through editing and audio.
 
 ## Haiku Film
-!md: 16 mm Color Negative Film
+!md: 16-mm Color Negative Film
 !yt: qG45tsNTZmU?start=150
 
 Long lost lovers or ex-friends, two women examine what they have lost in remembrance.
 
-# Writing
+# writing
 
 ## Anaphylaxis
 content content content content content content content content content content content content
@@ -131,7 +107,7 @@ content content content content content content content content content content 
 
 a dialogue between two people talking to each other saying things
 
-# About
+# about
 
 ## About Artist
 

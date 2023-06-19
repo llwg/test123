@@ -178,11 +178,27 @@ function host_local()
 	})
 }
 
+function dump_stills()
+{
+	console.error("DUMPING STILLS HEHE")
+	const fs = [...expandGlobSync(`docs/media/*/*`)]
+		.map(({ path }) => {
+			const match = path.match(/\/([^\/]+)\/([^\/]+)\.(\w+)$/)
+			if (!match) throw `unexpected filename: ${path}`
+			const [, short, name, ext] = match
+			if (short === 'profile') return null
+			return `${short}/${name}.${ext}`
+		}).filter(x => x)
+	console.log(JSON.stringify(fs))
+	console.error("OK")
+}
+
 const cmd_lookup =
 	{ clean
 	, rename_stills
 	, host_local
 	, stills2webp
+	, dump_stills
 	}
 
 const f = cmd_lookup[Deno.args[0]]
