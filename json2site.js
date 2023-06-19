@@ -70,7 +70,7 @@ const page2page = async ({ short, title, content, yt, md, stills }) => {
 
 // normal form for links
 const short2path = short => short === 'index'
-	? '/'
+	? '.' // so you can host in a folder if you want
 	: `${short}`
 
 // generate nav for `curr` page
