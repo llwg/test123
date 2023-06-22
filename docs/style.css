@@ -77,13 +77,15 @@ h2 { font-size: 2rem }
 :root
 	{ --main-text-color: black
 	; --idk-color: #f58ea9
-	; --main-bg-color: white
+	; --main-bg-color: #ededed
 	; font-family: times-backup,'Times New Roman', serif
+	; background-image: url(bg.jpg)
+	; background-size: contain
 	}
 
 html { background-color: var(--main-bg-color); color: var(--main-text-color) }
 
-svg { height: 100%; width: 100%; border: 1px solid }
+svg { height: 100%; width: 100%; overflow: visible; z-index: 1 }
 
 body
 	{ margin: 1rem
@@ -138,16 +140,30 @@ nav summary
 nav summary::marker { content: "" }
 nav summary::-webkit-details-marker { display: none }
 
-nav summary:hover, nav details[open] summary { font-family: 'Comic Sans MS', comic-backup, sans-serif; font-size: 100% }
-a:hover, a.current-page
+a[short='about-artist']::before { content: '(' }
+a[short='about-artist']::after { content: ')' }
+
+a[short='index']
+	{ color: var(--idk-color)
+	}
+
+nav summary:hover, nav details[open] summary,
+a:hover[short='about-artist'], a.current-page[short='about-artist']
+	{ font-family: 'Comic Sans MS', comic-backup, sans-serif
+	}
+
+#name.current-page { font-weight: bold }
+
+p a:hover, details a:hover, details a.current-page
 	{ font-weight: bold
-	; font-variation-settings: "wght" 450
+	; font-variation-settings: "wght" 600
 	; color: var(--idk-color)
 	}
 
 details[group='narrative'] summary { font-weight: bold }
 details[group='experimental'] summary { font-style: italic }
 details[group='writing'] summary { text-decoration: underline }
+
 
 .index-content { order: -1 }
 

@@ -110,7 +110,7 @@ const to_html = p => `<!DOCTYPE html>
 <body>
 	<div id=header>
 		<nav>
-			<a short=index id=name href=${short2path('index')}>Jolinna Li</a>
+			<a short=index id=name href=${short2path('index')}${p.short === 'index' ? ' class=current-page' : ''}>Jolinna Li</a>
 			${navstuff(p)}
 		</nav>
 	</div>
