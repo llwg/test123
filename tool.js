@@ -81,7 +81,9 @@ async function rename_stills() {
 			i += 1
 		}
 
-		// currently no sorting but could do sorting if needed in future maybe
+		// tries to sort at least a little
+		const attempt_number = str => +(str.match(/\d+/)?.[0] ?? 0)
+		not_nums.sort((a, b) => attempt_number(a.name) - attempt_number(b.name))
 		for (const { name, ext } of not_nums) {
 			changes.push([`${short}/${name}.${ext}`, `${short}/${i++}.${ext}`])
 		}

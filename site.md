@@ -3,27 +3,26 @@
 # narrative
 
 ## Fairytale
-!md: Digital, blackmagic HD
+!md: Digital, Blackmagic HD
 !yt: lN-jGt7pZR4
 An intimate short film that explores Grace's imaginary world as she goes on a quest to find an endangered bird, playing with ideas of friendship and realism through narration.
 
 ## Crosswalk
-!md: Digital, blackmagic HD
+!md: Digital, Blackmagic HD
 Jolinna worked as director of photography on _Crosswalk_, a film about a college student haunted by her previous relationship.
 
 ## Eyes On Me
-!md: Digital, blackmagic HD
+!md: Digital, Blackmagic HD
 !yt: v9_GJQzCOOc
 "Eyes on Me" was an Intermediate Cinematography project that explores the hypocrisy of prominent religious figures. It is a diptik film, shown through dual screens between two locations.
 
-
 ## Me and My Babysitter
-!md: Digital, blackmagic HD
+!md: Digital, Blackmagic HD
 !yt: OAnNDhukNuo
 How do we learn to do bad things? And how does our knowledge of evil inform our adolescence? These questions are explored in this film through learned transgressions. In a way, by learning how to be cruel, a girl grows up.
 
 ## Finding Eden
-!md: Digital, blackmagic HD
+!md: Digital, Blackmagic HD
 !yt: qpZ0cuob_Io
 An Adrenaline Project Film, this was made in 72 hours given the prompt of a coming-of-age film. A girl’s world comes crumbling down when she discovers her mother’s secret. She must learn to stand up for herself and her dreams.
 
@@ -60,9 +59,14 @@ An old bitter soul has a magical encounter that pushes him to reconnect with his
 
 # experimental
 
-## wreck
-!md: Digital, blackmagic HD
+## a rolling stone gathers no moss
+!md: Digital, Blackmagic HD
+!yt: Tlg9DB3tPUA
+The creative process, like the scientific process, is full of trial and error. While exploring the inner workings of our biological worlds and imaginative ones, road blocks inevitably arise. So when and where does creativity emerge? Ideas come trickling in, often in moments of connection between people of all walks of life. Like the complex ecological networks that exist around us, one idea feeds into the next, and it's sometimes hard to tell who inspired who! In her experimental documentary a rolling stone gathers no moss, Jolinna captures the mundane moments when artists engage in collaboration, both in the loose narrative and the form of the film. It's a symbiotic relationship, the artists in the film provide her with inspiration for the film itself, and the work she documents inspiredsher own fantastical visions that appear later in the film.  She then in turn captures and honors their artistic undertakings, shedding light on their vulnerabilities.
 
+## wreck
+!md: Digital, Blackmagic HD
+!yt: wVcpXXSR1GE
 Through visual and aural language, this film opens discussion between the impermanence of the individual alongside the irreparable effects humankind has had on the environment. In three parts inspired by Percy Shelley's poem 'Ozymandias', _wreck_ uses three distinct visual modes to convey its message.
 
 ## 1:11 film

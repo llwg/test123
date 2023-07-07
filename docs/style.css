@@ -91,13 +91,13 @@ body
 	{ margin: 1rem
 	; display: grid
 	; grid-template-rows: max-content 1fr
-	; gap: 2rem
+	; gap: 1.8rem
 	}
 
 nav details li
 	{ font-family: modern-font-haha, monospace
 	; font-variation-settings: "wght" 350
-	; font-size: 0.9rem
+	; font-size: 0.8rem
 	; margin-left: 0.5rem
 	}
 
@@ -172,7 +172,7 @@ details[group='writing'] summary { text-decoration: underline }
 	.index-content { order: 0 }
 	/* body { background-color: #aea } */
 	body
-		{ grid-template-columns: 15rem 1fr
+		{ grid-template-columns: 16rem 1fr
 		; width: 60rem
 		; margin: 2rem
 		}
@@ -181,7 +181,7 @@ details[group='writing'] summary { text-decoration: underline }
 
 /* mobile */
 @media (min-width: 56rem) {
-	body { margin: 3rem; gap: 12% }
+	body { margin: 3rem; gap: 10% }
 }
 
 /* thumbnails */
