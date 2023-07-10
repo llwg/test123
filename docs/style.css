@@ -109,7 +109,7 @@ nav details li
 	; margin-bottom: 0.6rem
 	}
 
-h2.title { font-family: modern-font-haha, monospace }
+h2.film-title { font-family: modern-font-haha, monospace }
 
 p { text-align: justify }
 
@@ -161,7 +161,8 @@ p a:hover, details a:hover, details a.current-page
 	}
 
 details[group='narrative'] summary { font-weight: bold }
-details[group='experimental'] summary { font-style: italic }
+details[group='experimental'] summary { letter-spacing: .2rem }
+details[group='photography'] summary { font-style: italic }
 details[group='writing'] summary { text-decoration: underline }
 
 

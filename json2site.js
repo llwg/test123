@@ -2,6 +2,10 @@
 
 import { readAll } from 'https://deno.land/std@0.177.0/streams/mod.ts'
 
+const FILM_GROUPS = new Set(['narrative', 'experimental'])
+const PHOTOGRAPHY_GROUPS = new Set(['photography'])
+const SINGLE_GROUPS = new Set(['about'])
+
 Array.prototype.to_h = function() {
 	return Object.fromEntries(this)
 }
@@ -48,10 +52,10 @@ const cats = counts(groups)
 	.filter(x => x[1] > 1)
 	.map(x => x[0])
 
-const page2page = async ({ short, title, content, yt, md, stills }) => {
+const page2page = async ({ short, title, content, yt, md, stills, group }) => {
 	const html = await pandoc_markdown(content)
 
-	if (md) { // film page
+	if (FILM_GROUPS.has(group)) { // film page
 		const yt_disp = yt
 			? `<iframe class=film-yt src="https://www.youtube.com/embed/${yt}" title="YouTube player for ${title}" frameborder=0 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`
 			: ''
@@ -59,9 +63,16 @@ const page2page = async ({ short, title, content, yt, md, stills }) => {
 			? ''
 			: `<div class=stills>${stills.map(src => `<img class=still src='${src}'>`).join('')}</div>`
 
-		return `<div class=film-intro><h2 class=title>${title}</h2><div class=film-medium>${md}</div>${html}</div>`
+		return `<div class=film-intro><h2 class=film-title>${title}</h2><div class=film-medium>${md}</div>${html}</div>`
 			+ yt_disp + stills_disp
-	} else if (short !== 'index') { // not index
+	} else if (PHOTOGRAPHY_GROUPS.has(group)) {
+		const stills_disp = stills.length === 0
+			? ''
+			: `<div class=stills>${stills.map(src => `<img class=still src='${src}'>`).join('')}</div>`
+
+		return `<div class=photography-intro><h2 class=photography-title>${title}</h2>${html}</div>`
+			+ stills_disp
+	} if (short !== 'index') { // not index
 		return `<div><h2>${title}</h2></div>${html}`
 	} else {
 		return html
@@ -76,7 +87,7 @@ const short2path = short => short === 'index'
 // generate nav for `curr` page
 const navstuff = curr => navs.map(g => {
 	// special 'About' case -- whole page, not a group
-	if (!cats.includes(g)) {
+	if (SINGLE_GROUPS.has(g)) {
 		const page = pages.find(({ group }) => g === group)
 		return `<a short='${page.short}' href='${short2path(page.short)}'${page.short === curr.short ? ' class=current-page' : ''}>${g}</a>` // alert: bad hack
 	}
