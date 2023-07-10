@@ -113,6 +113,8 @@ const page2ogdescription = p => {
 		return `An experimental film by Jolinna Li`
 	if (group === 'narrative')
 		return `A narrative film by Jolinna Li`
+	if (group === 'photography')
+		return `A series of photos taken by Jolinna Li`
 	else
 		throw `page2description error: ${JSON.stringify(p)}`
 }
@@ -124,7 +126,7 @@ const to_html = p => `<!DOCTYPE html>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta charset="UTF-8">
 
-${!p.md ? `` : `<meta property='og:title' content="${p.title /* NOTE: double quoted */}" />
+${!FILM_GROUPS.has(p.group) && !PHOTOGRAPHY_GROUPS.has(p.group) ? `` : `<meta property='og:title' content="${p.title /* NOTE: double quoted */}" />
 <meta property='og:description' content="${page2ogdescription(p)}" />
 <meta property='og:image' content="https://jolinnali.github.io/${p.stills[0]}" />`}
 
