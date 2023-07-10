@@ -121,5 +121,8 @@ Jolinna Li is a filmmaker based in Charlottesville, Virginia. She is a current S
 
 <div id=about-pictures-b><img src=media/profile/1.webp><img src=media/profile/3.webp></div>
 
+<p>
 Contact: <a href='mailto:jolinnayli@gmail.com'>jolinnayli@gmail.com</a>
-Resume: <a href='./Resume_Jolinna_Li.pdf'>PDF</a>
+<p>
+Resume: <a href='./Resume_Jolinna_Li.pdf'>PDF here</a>
+</p>

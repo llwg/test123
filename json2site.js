@@ -114,8 +114,8 @@ const to_html = p => `<!DOCTYPE html>
 <meta charset="UTF-8">
 
 ${!p.md ? `` : `<meta property='og:title' content="${p.title /* NOTE: double quoted */}" />
-<meta property='og:description' content="https://jolinnali.github.io/${page2ogdescription(p)}" />
-<meta property='og:image' content="${p.stills[0]}" />`}
+<meta property='og:description' content="${page2ogdescription(p)}" />
+<meta property='og:image' content="https://jolinnali.github.io/${p.stills[0]}" />`}
 
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
