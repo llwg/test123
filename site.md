@@ -101,7 +101,7 @@ Long lost lovers or ex-friends, two women examine what they have lost in remembr
 # photography
 
 ## Rooted
-Autumn Samone, in her series of images in Rooted, taken by Jolinna Li, creates a tree sculpture with synthetic hair, framing it alongside her body and the ethereal forest floor. Often considered "natural looking", protective hair styles in black communities often use synthetic elements. Through these plays on what is considered "natural", Samone connects the performance that is culturally integral to black identity to her own bodily performance in front of the camera.
+Autumn Samone, in her series of images in _Rooted_, taken by Jolinna Li, creates a tree sculpture with synthetic hair, framing it alongside her body and the ethereal forest floor. Often considered "natural looking", protective hair styles in black communities often use synthetic elements. Through these plays on what is considered "natural", Samone connects the performance that is culturally integral to black identity to her own bodily performance in front of the camera.
 
 # writing
 
@@ -120,14 +120,12 @@ a dialogue between two people talking to each other saying things
 
 ## About Artist
 
-<div id=about-pictures-a><img src=media/profile/2.webp></div>
+<div id=about-pictures><img src=media/profile/0.jpg><img src=media/profile/3.webp></div>
 
 Jolinna Li is a filmmaker based in Charlottesville, Virginia. She is a current Studio Art student at the University of Virginia concentrating in Cinematography. With experience in working with both traditional film and HD cameras, Jolinna likes exploring realism, cultural identity, relationship dynamics, and love in her work. Films she has worked on have been selected by the Virginia Film Festival and screened at the McGuffey Art center. She has also been involved in the Adrenaline project and works with Lighthouse Studios as a freelance editor.
 
-<div id=about-pictures-b><img src=media/profile/1.webp><img src=media/profile/3.webp></div>
-
 <p>
 Contact: <a href='mailto:jolinnayli@gmail.com'>jolinnayli@gmail.com</a>
-<p>
-Resume: <a href='./Resume_Jolinna_Li.pdf'>PDF here</a>
+<br>
+Resume: <a href='./Resume_Jolinna_Li.pdf'><u>PDF</u></a>
 </p>
