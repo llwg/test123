@@ -96,11 +96,26 @@ const navstuff = curr => navs.map(g => {
 	</details>`
 }).join('')
 
+const page2ogdescription = p => {
+	const {group} = p
+	if (group === 'experimental')
+		return `An experimental film by Jolinna Li`
+	if (group === 'narrative')
+		return `A narrative film by Jolinna Li`
+	else
+		throw `page2description error: ${JSON.stringify(p)}`
+}
+
 // { ...page, page } => string
 const to_html = p => `<!DOCTYPE html>
+
 <title>${p.short === 'index' ? 'Jolinna Li' : p.title}</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta charset="UTF-8">
+
+${!p.md ? `` : `<meta property='og:title' content="${p.title /* NOTE: double quoted */}" />
+<meta property='og:description' content="https://jolinnali.github.io/${page2ogdescription(p)}" />
+<meta property='og:image' content="${p.stills[0]}" />`}
 
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
