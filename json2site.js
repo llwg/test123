@@ -122,6 +122,15 @@ const page2ogdescription = p => {
 // { ...page, page } => string
 const to_html = p => `<!DOCTYPE html>
 
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5RJJVBLRBV"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-5RJJVBLRBV');
+</script>
+
 <title>${p.short === 'index' ? 'Jolinna Li' : p.title}</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta charset="UTF-8">
@@ -134,6 +143,7 @@ ${!FILM_GROUPS.has(p.group) && !PHOTOGRAPHY_GROUPS.has(p.group) ? `` : `<meta pr
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 
 <link rel=stylesheet href=style.css>
+</head>
 
 <body>
 	<div id=header>
@@ -154,7 +164,7 @@ ${!FILM_GROUPS.has(p.group) && !PHOTOGRAPHY_GROUPS.has(p.group) ? `` : `<meta pr
 <script src="./d3-timer@3.js"></script>
 <script src="./d3-force@3.js"></script>
 <script src=script.js></script>
-`
+`.replace(/^\t+/mg, '').replace(/$\n+/mg, '')
 
 const generated = await Promise.all(
 	pages.map(async p => ({...p, page: await page2page(p)}))
