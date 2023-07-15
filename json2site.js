@@ -75,8 +75,13 @@ const PAGEGEN =
 		return `<div class=photography-intro><h2 class=photography-title>${title}</h2>${html}</div>`
 			+ stills_disp
 	}]
-	, [IS_WRITING, (html, { title }) => {
-		return html
+	, [IS_WRITING, async (html, { title, date, writing }) => {
+		if (!writing) throw `writing has no writing: ${title}`
+		const writing_content = await pandoc_markdown(writing)
+		return `<div class=story>
+		<h2>${title}</h2>
+		<span class=story-date>${date}</span>
+		<hr>${writing_content}</div>`
 	}]
 	, [g => g === 'about', (html, {title}) => `<div><h2>${title}</h2></div>${html}`]
 	, [g => g === 'index', (html) => html]

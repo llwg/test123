@@ -15,6 +15,12 @@ const short2stills = short => [...expandGlobSync(`docs/media/${short}/*`)]
 	.sort((x, y) => +x.name.match(/\d+/)[0] - +y.name.match(/\d+/)[0])
 	.map(f => `media/${short}/${f.name}`)
 
+const short2writing = async short => {
+	const got = [...expandGlobSync(`writing/${short}.md`)]
+	if (got.length !== 1) return null
+	return Deno.readTextFile(got[0].path)
+}
+
 let group = 'index'
 // [{ group, short, title, content }]
 const pages = [{ group: 'index', title: 'Jolinna Li', short: 'index', content: [] }]
@@ -28,17 +34,20 @@ for (const line of doc.split('\n')) {
 		pages.last().md ??= m[1].trim()
 	} else if (m = line.match(/^!yt:(.+)/)) {
 		pages.last().yt ??= m[1].trim()
+	} else if (m = line.match(/^!date:(.+)/)) {
+		pages.last().date ??= m[1].trim()
 	} else {
 		pages.last()?.content.push(line)
 	}
 }
 
-const pages_processed = pages.map(p => {
+const pages_processed = await Promise.all(pages.map(async p => {
 	const short = title2short(p.title)
 	const content = p.content.join('\n').trim()
 	const stills = short2stills(short)
-	return { short, stills, ...p, content }
-})
+	const writing = await short2writing(short)
+	return { short, stills, ...p, content, writing }
+}))
 
 const out = {}
 for (const p of pages_processed) {
