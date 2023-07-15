@@ -67,18 +67,23 @@ table {
 	font-display: swap;
 }
 
-em { font-style: italic }
+i, em { font-style: italic }
 img { max-width: 100% }
 
 #name { font-size: 2.2rem }
 h1 { font-size: 2.2rem; font-weight: bold }
 h2 { font-size: 2rem }
 
+.story h2, .story-date { font-style: italic }
+.story { display: flex; flex-direction: column}
+.story-date { text-align: right }
+.story hr { margin: 12pt 0 12pt 0 }
+
 :root
 	{ --main-text-color: black
 	; --idk-color: #f58ea9
 	; --main-bg-color: #ededed
-	; font-family: times-backup,'Times New Roman', serif
+	; font-family: 'Times New Roman', times-backup, serif
 	; background-image: url(bg.jpg)
 	; background-size: contain
 	}
@@ -100,6 +105,13 @@ nav details li
 	; font-size: 0.8rem
 	; margin-left: 0.5rem
 	}
+
+.story
+	{ font-size: 12pt
+	; line-height: 2
+	}
+
+.story > p { text-indent: 36pt }
 
 .stills { display: grid; gap: 1rem }
 

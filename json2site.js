@@ -2,9 +2,12 @@
 
 import { readAll } from 'https://deno.land/std@0.177.0/streams/mod.ts'
 
-const FILM_GROUPS = new Set(['narrative', 'experimental'])
-const PHOTOGRAPHY_GROUPS = new Set(['photography'])
-const SINGLE_GROUPS = new Set(['about'])
+const ISIN = (...groups) => group => groups.includes(group)
+// str (group) => bool
+const IS_FILM = ISIN('narrative', 'experimental')
+const IS_PHOTOGRAPHY = ISIN('photography')
+const IS_SINGLE = ISIN('about')
+const IS_WRITING = ISIN('writing')
 
 Array.prototype.to_h = function() {
 	return Object.fromEntries(this)
@@ -52,10 +55,8 @@ const cats = counts(groups)
 	.filter(x => x[1] > 1)
 	.map(x => x[0])
 
-const page2page = async ({ short, title, content, yt, md, stills, group }) => {
-	const html = await pandoc_markdown(content)
-
-	if (FILM_GROUPS.has(group)) { // film page
+const PAGEGEN =
+	[ [IS_FILM, (html, { title, yt, md, stills }) => {
 		const yt_disp = yt
 			? `<iframe class=film-yt src="https://www.youtube.com/embed/${yt}" title="YouTube player for ${title}" frameborder=0 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`
 			: ''
@@ -65,18 +66,32 @@ const page2page = async ({ short, title, content, yt, md, stills, group }) => {
 
 		return `<div class=film-intro><h2 class=film-title>${title}</h2><div class=film-medium>${md}</div>${html}</div>`
 			+ yt_disp + stills_disp
-	} else if (PHOTOGRAPHY_GROUPS.has(group)) {
+	}]
+	, [IS_PHOTOGRAPHY, (html, { title, stills }) => {
 		const stills_disp = stills.length === 0
 			? ''
 			: `<div class=stills>${stills.map(src => `<img class=still src='${src}'>`).join('')}</div>`
 
 		return `<div class=photography-intro><h2 class=photography-title>${title}</h2>${html}</div>`
 			+ stills_disp
-	} if (short !== 'index') { // not index
-		return `<div><h2>${title}</h2></div>${html}`
-	} else {
+	}]
+	, [IS_WRITING, (html, { title }) => {
 		return html
-	}
+	}]
+	, [g => g === 'about', (html, {title}) => `<div><h2>${title}</h2></div>${html}`]
+	, [g => g === 'index', (html) => html]
+	]
+
+const page2page = async p => {
+	const html = await pandoc_markdown(p.content)
+
+	const gen = PAGEGEN.find(([pred]) => pred(p.group))
+
+	if (!gen) throw `no generator for group: ${p.group}`
+
+	const [, f] = gen
+
+	return f(html, p)
 }
 
 // normal form for links
@@ -87,7 +102,7 @@ const short2path = short => short === 'index'
 // generate nav for `curr` page
 const navstuff = curr => navs.map(g => {
 	// special 'About' case -- whole page, not a group
-	if (SINGLE_GROUPS.has(g)) {
+	if (IS_SINGLE(g)) {
 		const page = pages.find(({ group }) => g === group)
 		return `<a short='${page.short}' href='${short2path(page.short)}'${page.short === curr.short ? ' class=current-page' : ''}>${g}</a>` // alert: bad hack
 	}
@@ -135,7 +150,7 @@ gtag('config', 'G-5RJJVBLRBV');
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta charset="UTF-8">
 
-${!FILM_GROUPS.has(p.group) && !PHOTOGRAPHY_GROUPS.has(p.group) ? `` : `<meta property='og:title' content="${p.title /* NOTE: double quoted */}" />
+${!IS_FILM(p.group) && !IS_PHOTOGRAPHY(p.group) ? `` : `<meta property='og:title' content="${p.title /* NOTE: double quoted */}" />
 <meta property='og:description' content="${page2ogdescription(p)}" />
 <meta property='og:image' content="https://jolinnali.github.io/${p.stills[0]}" />`}
 
