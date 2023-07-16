@@ -21,14 +21,6 @@ const pandoc_markdown = async md => {
 	return new TextDecoder().decode(out)
 }
 
-const pages = JSON.parse(new TextDecoder().decode(await readAll(Deno.stdin)))
-
-// all groups across all pages
-const groups = pages
-	.filter(x => x.short !== 'index')
-	.map(x => x.group)
-const navs = [...new Set(groups)]
-
 const PAGEGEN =
 	[ [IS_FILM, (html, { title, yt, md, stills }) => {
 		const yt_disp = yt
@@ -79,8 +71,9 @@ const short2path = short => short === 'index'
 	: `${short}`
 
 // generate nav for `curr` page
-const navstuff = curr => navs.map(g => {
-	// special 'About' case -- whole page, not a group
+const navstuff = ({ pages, navs }) => curr => navs.map(g => {
+	if (g === 'index') return null
+
 	if (IS_SINGLE(g)) {
 		const page = pages.find(({ group }) => g === group)
 		return `<a short='${page.short}' href='${short2path(page.short)}'${page.short === curr.short ? ' class=current-page' : ''}>${g}</a>` // alert: bad hack
@@ -99,7 +92,7 @@ const navstuff = curr => navs.map(g => {
 			.join('')}
 		</ul>
 	</details>`
-}).join('')
+}).filter(x => x).join('')
 
 const page2ogdescription = p => {
 	const {group} = p
@@ -114,8 +107,7 @@ const page2ogdescription = p => {
 }
 
 // { ...page, page } => string
-const to_html = p => `<!DOCTYPE html>
-
+const to_html = site => p => `<!DOCTYPE html>
 <head>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-5RJJVBLRBV"></script>
 <script>
@@ -143,7 +135,7 @@ ${!IS_FILM(p.group) && !IS_PHOTOGRAPHY(p.group) ? `` : `<meta property='og:title
 	<div id=header>
 		<nav>
 			<a short=index id=name href=${short2path('index')}${p.short === 'index' ? ' class=current-page' : ''}>Jolinna Li</a>
-			${navstuff(p)}
+			${navstuff(site)(p)}
 		</nav>
 	</div>
 	<div id=content${p.short==='index' ? ' class=index-content' : ''}>
@@ -160,24 +152,31 @@ ${!IS_FILM(p.group) && !IS_PHOTOGRAPHY(p.group) ? `` : `<meta property='og:title
 <script src=script.js></script>
 `.replace(/^\t+/mg, '').replace(/$\n+/mg, '')
 
-const generated = await Promise.all(
-	pages.map(async p => ({...p, page: await page2page(p)}))
-)
+const generate_site = async pages => {
+	// all groups across all pages
+	const navs = [...new Set(pages.map(x => x.group))]
 
-const dynamic = generated
-	.map(({ short, title, page, group }) => [short, { title, page, group }])
-	.to_h()
+	const generated = await Promise.all(
+		pages.map(async p => ({...p, page: await page2page(p)}))
+	)
 
-const describe = async (x, y) => {
-	await Deno.writeTextFile(x, y)
-	return `wrote to ${x} (${y.length} chars)`
+	const dynamic = generated
+		.map(({ short, title, page, group }) => [short, { title, page, group }])
+		.to_h()
+
+	const describe = async (x, y) => {
+		await Deno.writeTextFile(x, y)
+		return `wrote to ${x} (${y.length} chars)`
+	}
+
+	const output = [
+		...await Promise.all(generated.map(p => describe(`docs/${p.short}.html`, to_html({ pages, navs })(p)))),
+		await describe('docs/site.json', JSON.stringify(dynamic)),
+	]
+
+	console.log(output.join('\n'))
+
+	console.log('OK')
 }
 
-const output = [
-	...await Promise.all(generated.map(p => describe(`docs/${p.short}.html`, to_html(p)))),
-	await describe('docs/site.json', JSON.stringify(dynamic)),
-]
-
-console.log(output.join('\n'))
-
-console.log('OK')
+export {generate_site}
