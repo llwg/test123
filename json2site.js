@@ -116,11 +116,11 @@ const navstuff = curr => navs.map(g => {
 		<summary>${g}</summary>
 		<ul>
 		${pages.filter(({group}) => g === group)
-			.map(({ title, short, md, stills }) => {
+			.map(({ sidebar, title, short, md, stills }) => {
 				const thumbnail = md
 					? `<img class=thumb src='${stills[0]}'>`
 					: ''
-				return `<li><a short='${short}' class='${curr.short === short ? 'current-page ' : ''}title' href='${short2path(short)}'>${thumbnail}${title}</a>`
+				return `<li><a short='${short}' class='${curr.short === short ? 'current-page ' : ''}title' href='${short2path(short)}'>${thumbnail}${sidebar ?? title}</a>`
 			})
 			.join('')}
 		</ul>

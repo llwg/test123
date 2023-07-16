@@ -106,6 +106,7 @@ Autumn Samone, in her series of images in _Rooted_, taken by Jolinna Li, creates
 # writing
 
 ## Conversations with a Phantom Piano
+!sidebar: Conversations...
 !date: Spring 2023
 
 ## Surfacing
