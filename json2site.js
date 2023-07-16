@@ -9,51 +9,25 @@ const IS_PHOTOGRAPHY = ISIN('photography')
 const IS_SINGLE = ISIN('about')
 const IS_WRITING = ISIN('writing')
 
-Array.prototype.to_h = function() {
-	return Object.fromEntries(this)
-}
+Array.prototype.to_h = function() { return Object.fromEntries(this) }
+Object.prototype.to_a = function() { return Object.entries(this) }
 
-Object.prototype.to_a = function() {
-	return Object.entries(this)
-}
-
-Object.prototype.vals = function() {
-	return Object.values(this)
-}
-
-const ENC = new TextEncoder()
-const DEC = new TextDecoder()
 const pandoc_markdown = async md => {
 	const p = Deno.run({ cmd: ['pandoc'], stdout: 'piped', stdin: 'piped' })
-	await p.stdin.write(ENC.encode(md))
+	await p.stdin.write(new TextEncoder().encode(md))
 	await p.stdin.close()
 	const out = await p.output()
 	p.close();
-	return DEC.decode(out)
+	return new TextDecoder().decode(out)
 }
 
 const pages = JSON.parse(new TextDecoder().decode(await readAll(Deno.stdin)))
-
-const counts = xs => {
-	const res = {}
-	for (const x of xs)
-		res[x] = (res[x] ?? 0) + 1
-	return res
-}
 
 // all groups across all pages
 const groups = pages
 	.filter(x => x.short !== 'index')
 	.map(x => x.group)
-
 const navs = [...new Set(groups)]
-
-// note: *should* keep order?
-// `group`s that have more than 2 pages
-const cats = counts(groups)
-	.to_a()
-	.filter(x => x[1] > 1)
-	.map(x => x[0])
 
 const PAGEGEN =
 	[ [IS_FILM, (html, { title, yt, md, stills }) => {
