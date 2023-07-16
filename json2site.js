@@ -1,7 +1,5 @@
 #!/usr/bin/env -S deno run --allow-write --allow-run
 
-import { readAll } from 'https://deno.land/std@0.177.0/streams/mod.ts'
-
 const ISIN = (...groups) => group => groups.includes(group)
 // str (group) => bool
 const IS_FILM = ISIN('narrative', 'experimental')
@@ -87,7 +85,10 @@ const navstuff = ({ pages, navs }) => curr => navs.map(g => {
 				const thumbnail = md
 					? `<img class=thumb src='${stills[0]}'>`
 					: ''
-				return `<li><a short='${short}' class='${curr.short === short ? 'current-page ' : ''}title' href='${short2path(short)}'>${thumbnail}${sidebar ?? title}</a>`
+				return `<li><a short='${short}' class='${curr.short === short ? 'current-page ' : ''}title' href='${short2path(short)}'>
+					${thumbnail}
+					<span class=title-searchable group=${g} title="${sidebar ?? title}">${sidebar ?? title}</span>
+				</a>`
 			})
 			.join('')}
 		</ul>
@@ -135,6 +136,7 @@ ${!IS_FILM(p.group) && !IS_PHOTOGRAPHY(p.group) ? `` : `<meta property='og:title
 	<div id=header>
 		<nav>
 			<a short=index id=name href=${short2path('index')}${p.short === 'index' ? ' class=current-page' : ''}>Jolinna Li</a>
+			<input id=search type=text placeholder=search autocomplete=off>
 			${navstuff(site)(p)}
 		</nav>
 	</div>

@@ -1,6 +1,7 @@
 // { short: { title, page, group } }
 const json = fetch('./site.json').then(r => r.json())
 
+const SEARCH = document.querySelector('#search')
 const CONTENT = document.querySelector('#content')
 const DETAILS = [...document.querySelectorAll('details')]
 const NAVAS = [...document.querySelectorAll('nav a')]
@@ -61,6 +62,7 @@ for (const a of NAVAS) {
 				clearInterval(set_interval)
 				set_interval = false
 			}
+			clear_search()
 			display(short).then(_ => history.pushState({ short }, '', a.href))
 			curr_short = short
 		}
@@ -70,6 +72,48 @@ for (const a of NAVAS) {
 
 // handle browser back button
 window.addEventListener('popstate', e => display(e.state?.short ?? short_base))
+
+/* SEARCH STUFF */
+function clear_search(){
+	SEARCH.value = ''
+	// this is probably doing this duplicate in some cases but oh well?.
+	json.then(j => {
+		DETAILS.forEach(d => d.open = d.getAttribute('group') === j[curr_short].group)
+	})
+
+	for (const e of document.querySelectorAll('.title-searchable')) {
+		e.innerText = e.getAttribute('title')
+	}
+
+
+}
+SEARCH.addEventListener('focus', _ => {
+	DETAILS.forEach(d => d.open = true)
+})
+SEARCH.addEventListener('focusout', _ => {
+	// by default retain search results (esp bc if u want to click on them it might close before u can click on them)
+	// but if there are no open search results open the current page group
+	if (!DETAILS.some(d => d.open)) {
+		json.then(j => {
+			DETAILS.forEach(d => d.open = d.getAttribute('group') === j[curr_short].group)
+		})
+	}
+})
+SEARCH.addEventListener('input', _ => {
+	const term = new RegExp(SEARCH.value, 'i')
+	const active_groups = new Set()
+	for (const e of document.querySelectorAll('.title-searchable')) {
+		const match = e.getAttribute('title').match(term)
+		if (!match) {
+			if (e.getAttribute('title') !== e.innerHTML)
+				e.innerHTML = e.getAttribute('title')
+			continue
+		}
+		active_groups.add(e.getAttribute('group'))
+		e.innerHTML = e.getAttribute('title').replace(term, '<mark>$&</mark>')
+	}
+	DETAILS.forEach(d => d.open = active_groups.has(d.getAttribute('group')))
+})
 
 /* GRAPH STUFF */
 
