@@ -22,6 +22,7 @@ const short2writing = async short => {
 }
 
 let group = 'index'
+const vals = new Set()
 // [{ group, short, title, content }]
 const pages = [{ group: 'index', title: 'Jolinna Li', short: 'index', content: [] }]
 for (const line of doc.split('\n')) {
@@ -30,16 +31,18 @@ for (const line of doc.split('\n')) {
 		pages.push({ group, title: m[1].trim(), content: [] })
 	} else if (m = line.match(/^# (.+)/)){
 		group = m[1].trim()
-	} else if (m = line.match(/^!md:(.+)/)) {
-		pages.last().md ??= m[1].trim()
-	} else if (m = line.match(/^!yt:(.+)/)) {
-		pages.last().yt ??= m[1].trim()
-	} else if (m = line.match(/^!date:(.+)/)) {
-		pages.last().date ??= m[1].trim()
+	} else if (m = line.match(/^!(\w+):(.+)/)) {
+		const last = pages.last()
+		const [, key, val] = m
+		vals.add(key)
+		if (last[key]) throw `error: ${last.title} already has key: ${key}`
+		last[key] = val.trim()
 	} else {
 		pages.last()?.content.push(line)
 	}
 }
+
+console.error(`handling keys: ${[...vals].join(', ')}`)
 
 const pages_processed = await Promise.all(pages.map(async p => {
 	const short = title2short(p.title)
