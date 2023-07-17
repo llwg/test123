@@ -87,9 +87,6 @@ function clear_search(){
 
 
 }
-SEARCH.addEventListener('focus', _ => {
-	DETAILS.forEach(d => d.open = true)
-})
 SEARCH.addEventListener('focusout', _ => {
 	// by default retain search results (esp bc if u want to click on them it might close before u can click on them)
 	// but if there are no open search results open the current page group
@@ -100,6 +97,10 @@ SEARCH.addEventListener('focusout', _ => {
 	}
 })
 SEARCH.addEventListener('input', _ => {
+	if (SEARCH.value === '') {
+		clear_search()
+		return
+	}
 	const term = new RegExp(SEARCH.value, 'i')
 	const active_groups = new Set()
 	for (const e of document.querySelectorAll('.title-searchable')) {
