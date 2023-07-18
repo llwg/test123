@@ -136,7 +136,7 @@ ${!IS_FILM(p.group) && !IS_PHOTOGRAPHY(p.group) ? `` : `<meta property='og:title
 	<div id=header>
 		<nav>
 			<a short=index id=name href=${short2path('index')}${p.short === 'index' ? ' class=current-page' : ''}>Jolinna Li</a>
-			<input id=search type=text placeholder=search autocomplete=off>
+			<input id=search type=text placeholder=search autocomplete=off hidden>
 			${navstuff(site)(p)}
 		</nav>
 	</div>
