@@ -2,6 +2,11 @@
 
 # narrative
 
+## home of rocks
+!md: Digital, Blackmagic HD
+!yt: 6hPOSOGaghQ
+Two friends, Frank and Noelle, investigate a cave surrounded by internet mystery. Once inside, the two find themselves reckoning with the horrors of their own imagination.
+
 ## Fairytale
 !md: Digital, Blackmagic HD
 !yt: lN-jGt7pZR4
