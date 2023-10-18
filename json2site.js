@@ -152,7 +152,7 @@ ${!IS_FILM(p.group) && !IS_PHOTOGRAPHY(p.group) ? `` : `<meta property='og:title
 <script src="./d3-timer@3.js"></script>
 <script src="./d3-force@3.js"></script>
 <script src=script.js></script>
-`.replace(/^\t+/mg, '').replace(/$\n+/mg, '')
+`.replace(/^\t+/mg, '').replace(/$\n+/mg, ' ')
 
 const generate_site = async pages => {
 	// all groups across all pages
