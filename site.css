@@ -67,6 +67,12 @@ table {
 	font-display: swap;
 }
 
+@font-face {
+	font-family: freight;
+	src: url(freight.ttf);
+	font-display: swap;
+}
+
 i, em { font-style: italic }
 img { max-width: 100% }
 
@@ -83,7 +89,7 @@ h2 { font-size: 2rem }
 	{ --main-text-color: black
 	; --idk-color: #f58ea9
 	; --main-bg-color: #ededed
-	; font-family: 'Times New Roman', times-backup, serif
+	; font-family: freight, serif
 	; background-image: url(bg.jpg)
 	; background-size: contain
 	}
@@ -113,7 +119,7 @@ nav details li
 	; background-color: rgba(0,0,0,0)
 	; border-bottom: 1px solid #aaa
 	; padding: .5rem
-	; font-family: 'Times New Roman'
+	; font-family: 'Times New Roman' /* TODO: not used currently */
 	; font-style: italic
 	}
 
@@ -162,8 +168,14 @@ nav summary
 nav summary::marker { content: "" }
 nav summary::-webkit-details-marker { display: none }
 
-a[short='about-artist']::before { content: '(' }
-a[short='about-artist']::after { content: ')' }
+a[short='about-artist']::before
+	{ content: '('
+	; font-family: serif /* big freight's parens are weird */
+	}
+a[short='about-artist']::after
+	{ content: ')'
+	; font-family: serif
+	}
 
 a[short='index']
 	{ color: var(--idk-color)
