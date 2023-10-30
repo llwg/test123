@@ -50,18 +50,6 @@ table {
 /** hello **/
 
 @font-face {
-	font-family: comic-backup;
-	src: url(comic-sans.woff);
-	font-display: swap;
-}
-
-@font-face {
-	font-family: times-backup;
-	src: url(times.woff);
-	font-display: swap;
-}
-
-@font-face {
 	font-family: modern-font-haha;
 	src: url(latin-roboto.woff2);
 	font-display: swap;
@@ -69,7 +57,7 @@ table {
 
 @font-face {
 	font-family: freight;
-	src: url(freight.ttf);
+	src: url(FreightBig-Light.woff);
 	font-display: swap;
 }
 
@@ -107,7 +95,7 @@ body
 
 nav details li
 	{ font-family: modern-font-haha, monospace
-	; font-variation-settings: "wght" 350
+	; font-variation-settings: "wght" 300
 	; font-size: 0.8rem
 	; margin-left: 0.5rem
 	; text-indent: -1.6em
@@ -168,22 +156,13 @@ nav summary
 nav summary::marker { content: "" }
 nav summary::-webkit-details-marker { display: none }
 
-a[short='about-artist']::before
-	{ content: '('
-	; font-family: serif /* big freight's parens are weird */
-	}
-a[short='about-artist']::after
-	{ content: ')'
-	; font-family: serif
-	}
-
 a[short='index']
 	{ color: var(--idk-color)
 	}
 
 nav summary:hover, nav details[open] summary,
 a:hover[short='about-artist'], a.current-page[short='about-artist']
-	{ font-family: 'Comic Sans MS', comic-backup, sans-serif
+	{ font-weight: bold
 	}
 
 #name.current-page { font-weight: bold }
@@ -193,11 +172,6 @@ p a:hover, details a:hover, details a.current-page
 	; font-variation-settings: "wght" 600
 	; color: var(--idk-color)
 	}
-
-details[group='narrative'] summary { font-weight: bold }
-details[group='experimental'] summary { letter-spacing: .2rem }
-details[group='photography'] summary { font-style: italic }
-details[group='writing'] summary { text-decoration: underline }
 
 
 .index-content { order: -1 }
