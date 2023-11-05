@@ -129,7 +129,7 @@ Autumn Samone, in her series of images in _Rooted_, taken by Jolinna Li, creates
 
 ## About Artist
 
-<div id=about-pictures><img src=media/profile/0.jpg><img src=media/profile/3.webp></div>
+<div id=about-pictures><img src=media/profile/1.jpg><img src=media/profile/2.webp></div>
 
 Jolinna Li is a filmmaker based in Charlottesville, Virginia. She is a current Studio Art student at the University of Virginia concentrating in Cinematography. With experience in working with both traditional film and HD cameras, Jolinna likes exploring realism, cultural identity, relationship dynamics, and love in her work. Films she has worked on have been selected by the Virginia Film Festival and screened at the McGuffey Art center. She has also been involved in the Adrenaline project and works with Lighthouse Studios as a freelance editor.
 
