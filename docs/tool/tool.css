@@ -11,5 +11,4 @@ body { display: grid; grid-template-columns: 2fr 1fr; margin: 0 }
 
 body > div { max-height: 100vh; overflow-y: scroll }
 
-
 #output { width: 100%; height: 20rem}

@@ -104,6 +104,9 @@ Long lost lovers or ex-friends, two women examine what they have lost in remembr
 
 # photography
 
+## Remember the Wolf
+Wolves once roamed Virginia, but predator control programs and habitat destruction made their numbers dwindle, until they were finally declared extinct in 1980. Frequenting childhood tales, wolves are a symbol of cunning and corruption. But what happens when the very things we warn children about are eliminated due to our collective, irreversible damage? Created by previous art resident Ed Miller at Mountain Lake, The Red Wolf wearily watches over the coming and going of field scientists, researchers, and their families to the research station. Spotting the statue in the dark, a displaced urbanite might scurry, not knowing that the only wolves that remain in the mountains are made from clay. On the surface, Mountain Lake is a secluded sanctuary – no cellular connection, lots of overgrown trails, and a self-sufficient plumbing system. Seeing a fallen Hemlock teeming with decomposers, beetles and fungus, one might muse at primordial beauty and remark on the cycle of life and the transient presence of humankind. But even so, the world around it is changing. Due to its elevation, the station had been free from poison ivy and ticks – until recently. The increase in temperatures have catalyzed these creatures’ slow creep to the station, including one that eats away at the hemlock population. Perhaps it’s time to start from scratch, turn to the very ecological networks that we harm, fighting for harmony. In Remember the Wolf, five photos meditate on stories passed down from generation to generation as the warning bells of the climate crisis crescendo.
+
 ## Rooted
 Autumn Samone, in her series of images in _Rooted_, taken by Jolinna Li, creates a tree sculpture with synthetic hair, framing it alongside her body and the ethereal forest floor. Often considered "natural looking", protective hair styles in black communities often use synthetic elements. Through these plays on what is considered "natural", Samone connects the performance that is culturally integral to black identity to her own bodily performance in front of the camera.
 
@@ -129,7 +132,7 @@ Autumn Samone, in her series of images in _Rooted_, taken by Jolinna Li, creates
 
 ## About Artist
 
-<div id=about-pictures><img src=media/profile/1.jpg><img src=media/profile/2.webp></div>
+<div id=about-pictures><img src=media/profile/1.webp><img src=media/profile/2.webp></div>
 
 Jolinna Li is a filmmaker based in Charlottesville, Virginia. She is a current Studio Art student at the University of Virginia concentrating in Cinematography. With experience in working with both traditional film and HD cameras, Jolinna likes exploring realism, cultural identity, relationship dynamics, and love in her work. Films she has worked on have been selected by the Virginia Film Festival and screened at the McGuffey Art center. She has also been involved in the Adrenaline project and works with Lighthouse Studios as a freelance editor.
 
