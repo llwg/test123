@@ -61,13 +61,12 @@ Torn between her love for taekwondo and familial expectations, Amy squares up fo
 !yt: nDNND5ocIZg
 An old bitter soul has a magical encounter that pushes him to reconnect with his daughter.
 
-
 # experimental
 
 ## a rolling stone gathers no moss
 !md: Digital, Blackmagic HD
 !yt: pgWBt0oGZjU
-The creative process, like the scientific process, is full of trial and error. While exploring the inner workings of our biological worlds and imaginative ones, road blocks inevitably arise. So when and where does creativity emerge? Ideas come trickling in, often in moments of connection between people of all walks of life. Like the complex ecological networks that exist around us, one idea feeds into the next, and it’s sometimes hard to tell who inspired who! In her experimental documentary a rolling stone gathers no moss, Jolinna captures the mundane moments when artists engage in collaboration, both in the loose narrative and the form of the film. It’s a symbiotic relationship, the artists in the film provide her with inspiration for the film itself, and the work she documents inspire her own fantastical visions that appear later in the film. She then in turn captures and honors their artistic undertakings, shedding light on their vulnerabilities.
+a rolling stone gathers no moss addresses collective art-making through resonant conversations and lingering stretches of shared imagination. At the secluded Biological Research Station at Pembroke, Virginia, an analogous relationship between creative and scientific processes surfaced. It was one of trial and error, and at times, much frustration. When things come to a halt, one turns to community, conversing and exchanging ideas until it feels right to venture out again. And the effect is often a rippling one. The flow of inspiration from person to person, like the complex ecological networks that surround us, underscore the symbiotic relationship between the creator of the film and the many creators within the film. Between the artists, fantastical visions are transposed and realized, while ideas of transparency, authorial voice, and “candidness” are stretched, amplified, and questioned. This film was first screened at Mountain Lake at our student Artlab Showcase and was officially selected for the Down East Flick Fest in Greenville, North Carolina where it will be screened in late November.
 
 ## wreck
 !md: Digital, Blackmagic HD
