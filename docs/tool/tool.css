@@ -1,0 +1,15 @@
+img { max-width: 100% }
+.image { max-width: 32rem; position: relative }
+.image-text { position: absolute; top: 0; left: 0; background-color: rgba(255,0,0,0.5)}
+.pics { display: flex; flex-wrap: wrap}
+
+.image:hover .image-text { text-decoration: underline }
+
+.image.selected .image-text { background-color: greenyellow }
+
+body { display: grid; grid-template-columns: 2fr 1fr; margin: 0 }
+
+body > div { max-height: 100vh; overflow-y: scroll }
+
+
+#output { width: 100%; height: 20rem}
