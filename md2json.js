@@ -43,11 +43,14 @@ const md2json = async md => {
 	console.error(`handling keys: ${[...vals].join(', ')}`)
 
 	const pages_processed = await Promise.all(pages.map(async p => {
-		const short = title2short(p.title)
-		const content = p.content.join('\n').trim()
-		const stills = short2stills(short)
-		const writing = await short2writing(short)
-		return { short, stills, ...p, content, writing }
+		const titleShort = title2short(p.title) // note: is overridden by any `short` in `...p`
+		const page = { short: titleShort, ...p }
+
+		page.stills = short2stills(page.short)
+		page.content = p.content.join('\n').trim()
+		page.writing = await short2writing(page.short)
+
+		return page
 	}))
 
 	const check = {}
