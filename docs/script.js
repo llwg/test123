@@ -165,7 +165,22 @@ const stills = [
 	"media/wreck/8.webp",
 	"media/wreck/10.webp",
 	"media/wreck/11.webp",
-	"media/wreck/12.webp"
+	"media/wreck/12.webp",
+	"media/crows-mouth-film/1.webp",
+	"media/crows-mouth-film/2.webp",
+	"media/crows-mouth-film/3.webp",
+	"media/crows-mouth-film/4.webp",
+	"media/crows-mouth-film/5.webp",
+	"media/crows-mouth-film/6.webp",
+	"media/crows-mouth-film/7.webp",
+	"media/crows-mouth-film/8.webp",
+	"media/crows-mouth-film/9.webp",
+	"media/crows-mouth-film/10.webp",
+	"media/crows-mouth-film/11.webp",
+	"media/crows-mouth-film/12.webp",
+	"media/crows-mouth-film/13.webp",
+	"media/crows-mouth-film/14.webp",
+	"media/crows-mouth-film/15.webp"
 ]
 
 Array.prototype.rande = function() {
