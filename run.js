@@ -34,10 +34,10 @@ const doTool = async _ => {
 
 		return `<h2 id='${short}'>${short}</h2><div class=pics>${files.map(([name, full]) => {
 			const fullPath = `media/${short}/${full}`
-			return `<div class=image fullPath='${fullPath}'><img src='${fullPath}'><span class=image-text>${full}</text></div>`
+			return `<div class=image fullPath='${fullPath}'><img src='../${fullPath}'><span class=image-text>${full}</text></div>`
 		}).join('')}</div>`
 	})
-	await Deno.writeTextFile('docs/_tool.html', `<link rel=stylesheet href=tool/tool.css>
+	await Deno.writeTextFile('docs/tool/tool.html', `<link rel=stylesheet href=tool.css>
 		<body>
 			<div>${site}</div>
 			<div id=infopane_wrapper>
@@ -50,7 +50,7 @@ const doTool = async _ => {
 			</div>
 			</div>
 		</body>
-	<script src=tool/tool.js></script>`)
+	<script src=tool.js></script>`)
 }
 
 await Promise.all([minify_css(), dosite(), doTool()])
