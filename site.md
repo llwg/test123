@@ -6,7 +6,7 @@
 !md: Digital, Pocket Blackmagic 6k
 !yt: FReeI0MKfI0
 !short: crows-mouth-film
-Famous film director Sage Liu is caught off guard at her interview regarding her newest project, a biopic of her mother, depicting their complicated relationship and her difficult upbringing. So what happens her mom shows up at her studio unannounced?
+Famous film director Sage Liu is caught off guard at her interview regarding her newest project, a biopic of her mother, depicting their complicated relationship and her difficult upbringing. So what happens when her mom shows up at her studio unannounced?
 
 ## home of rocks
 !md: Digital, Blackmagic HD
