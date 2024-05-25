@@ -2,6 +2,10 @@
 
 # narrative
 
+## Animus
+!md: Digital, Blackmagic HD
+Animus is inspired by Taiwanese superstition and Greek mythology. While painting in a field, Daphne, an uninspired artist, is surprised by a mysterious Red figure that has something to show her. Animus explores the ways in which we bar ourselves from reaching our true potential and the experience of embracing the process.
+
 ## levels
 !md: Digital, Blackmagic HD
 !yt: iOwI4uxjYoc
