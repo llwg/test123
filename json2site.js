@@ -19,16 +19,31 @@ const pandoc_markdown = async md => {
 	return new TextDecoder().decode(out)
 }
 
+const FULLMONTHS = ['haha', 'january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december']
+	.map(x => x.toUpperCase())
+
+// '2024.2' => whatever html
+const date2datedisp = date => {
+	const m = date.match(/(\d{4})\.(\d+)/)
+	if (!m) throw `invalid date thing: ${date}`
+	const [year, month] = m.slice(1).map(x => +x)
+	return `<time>${FULLMONTHS[month]} ${year}</time>`
+}
+
 const PAGEGEN =
-	[ [IS_FILM, (html, { title, yt, md, stills }) => {
+	[ [IS_FILM, (html, { title, yt, md, stills, date }) => {
 		const yt_disp = yt
 			? `<iframe class=film-yt src="https://www.youtube.com/embed/${yt}" title="YouTube player for ${title}" frameborder=0 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`
 			: ''
 		const stills_disp = stills.length === 0
 			? ''
 			: `<div class=stills>${stills.map(src => `<img class=still src='${src}'>`).join('')}</div>`
+		const date_disp = date
+			? date2datedisp(date)
+			: ''
 
-		return `<div class=film-intro><h2 class=film-title>${title}</h2><div class=film-medium>${md}</div>${html}</div>`
+		return `<div class=film-intro><h2 class=film-title>${title}</h2>`
+			+ `<div class=film-details><span>${date_disp}</span><span>${md}</span></div>${html}</div>`
 			+ yt_disp + stills_disp
 	}]
 	, [IS_PHOTOGRAPHY, (html, { title, stills }) => {

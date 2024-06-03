@@ -120,10 +120,15 @@ nav details li
 
 .stills { display: grid; gap: 1rem }
 
-.film-medium
-	{ font-family: modern-font-haha, monospace
-	; font-style: italic
+.still { transition: transform .8s }
+.still:hover { transform: scale(1.01)  }
+
+.film-details
+	{ display: flex
+	; flex-direction: column
 	; margin-bottom: 0.6rem
+	; font-family: modern-font-haha, monospace
+	; font-size: 0.88rem
 	}
 
 h2.film-title { font-family: modern-font-haha, monospace }

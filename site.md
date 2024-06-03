@@ -3,26 +3,31 @@
 # narrative
 
 ## Animus
+!date: 2024.5
 !md: Digital, Blackmagic HD
 Animus is inspired by Taiwanese superstition and Greek mythology. While painting in a field, Daphne, an uninspired artist, is surprised by a mysterious Red figure that has something to show her. Animus explores the ways in which we bar ourselves from reaching our true potential and the experience of embracing the process.
 
 ## levels
+!date: 2024.2
 !md: Digital, Blackmagic HD
 !yt: iOwI4uxjYoc
 Blake reaches out to an old highschool classmate, Alex who now works at a prestigious law firm. Will their friendship be rekindled? This is a narrative film with experimental sound design, trying to explore power dynamics with contrasting non-diegetic environmental sounds.
 
 ## crow's mouth
+!date: 2023.9
 !md: Digital, Pocket Blackmagic 6k
 !yt: FReeI0MKfI0
 !short: crows-mouth-film
 Famous film director Sage Liu is caught off guard at her interview regarding her newest project, a biopic of her mother, depicting their complicated relationship and her difficult upbringing. So what happens when her mom shows up at her studio unannounced?
 
 ## home of rocks
+!date: 2023.9
 !md: Digital, Blackmagic HD
 !yt: 6hPOSOGaghQ
 Two friends, Frank and Noelle, investigate a cave surrounded by internet mystery. Once inside, the two find themselves reckoning with the horrors of their own imagination.
 
 ## Fairytale
+!date: 2023.5
 !md: Digital, Blackmagic HD
 !yt: lN-jGt7pZR4
 An intimate short film that explores Grace's imaginary world as she goes on a quest to find an endangered bird, playing with ideas of friendship and realism through narration.
@@ -32,26 +37,31 @@ An intimate short film that explores Grace's imaginary world as she goes on a qu
 Jolinna worked as director of photography on _Crosswalk_, a film about a college student haunted by her previous relationship.
 
 ## Eyes On Me
+!date: 2023.2
 !md: Digital, Blackmagic HD
 !yt: v9_GJQzCOOc
 "Eyes on Me" was an Intermediate Cinematography project that explores the hypocrisy of prominent religious figures. It is a diptik film, shown through dual screens between two locations.
 
 ## Me and My Babysitter
+!date: 2022.12
 !md: Digital, Blackmagic HD
 !yt: OAnNDhukNuo
 How do we learn to do bad things? And how does our knowledge of evil inform our adolescence? These questions are explored in this film through learned transgressions. In a way, by learning how to be cruel, a girl grows up.
 
 ## Finding Eden
+!date: 2022.11
 !md: Digital, Blackmagic HD
 !yt: qpZ0cuob_Io
 An Adrenaline Project Film, this was made in 72 hours given the prompt of a coming-of-age film. A girl’s world comes crumbling down when she discovers her mother’s secret. She must learn to stand up for herself and her dreams.
 
 ## Barbie's Bitch Bites Back
+!date: 2022.9
 !md: Digital
 !yt: W5yFtkCnW5I
 Intermediate Cinematography narrative editing project where the class brainstorms and collaboratively films and then edit in groups of two. In this project we unpack the meaning of femininity and the female wrath.
 
 ## Col and Olga
+!date: 2022.6
 !md: Analog, 16-mm color film
 !yt: eJeZrADhFrg
 A play on objects and separation as two "lovers" try to find each other through the urban DC transportation.
