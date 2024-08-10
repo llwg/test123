@@ -4,7 +4,7 @@ const update_pre = _ => {
 	const selected = [...document.querySelectorAll('.selected')]
 		.map(e => e.getAttribute('fullPath'))
 
-	document.querySelector('#output').value = JSON.stringify(selected, null, '\t')
+	output.value = JSON.stringify(selected, null, '\t')
 }
 
 for (const fig of document.querySelectorAll('.image')) {
@@ -19,13 +19,12 @@ for (const fig of document.querySelectorAll('.image')) {
 	}
 }
 
-document.querySelector('#import-button').onclick = _ => {
-
+const update_via_json_str = str => {
 	for (const node of document.querySelectorAll('.selected'))
 		node.classList.remove('selected')
 
 	try {
-		const j = JSON.parse(output.value)
+		const j = JSON.parse(str)
 		for (const fullPath of j) {
 			try {
 				document.querySelector(`.image[fullPath='${fullPath}']`).classList.add('selected')
@@ -39,3 +38,5 @@ document.querySelector('#import-button').onclick = _ => {
 		output.value = 'something went wrong :).'
 	}
 }
+
+fetch('../stills.json').then(r => r.text()).then(update_via_json_str)

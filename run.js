@@ -43,8 +43,8 @@ const doTool = async _ => {
 			<div id=infopane_wrapper>
 			<div id=infopane>
 				<h1>tool to select images</h1>
-				<p>here you can select images and a text will be generated representing your selection which is very handy and good and can be shared by copy and pasting it to someone. have a nice day</p>
-				<textarea id=output>select an images to begin generating a selection. or, paste something in and press the "import" button.</textarea><button id=import-button>click here to "import" i.e. based on the current text, go through and select the things.</button>
+				<p>hello my friend. green filename in upper left corner represent photo that is SELECTED. when you load page, it will select all photos that are currently displayed on main page. Please click photos to select or deselect photos as you please. Then, copy and paste the list in the text area below containing filenames either to site maintainer person, or just into docs/stills.json (thats what maintainer person will do anyways). have a nice day</p>
+				<textarea id=output>hi. if you are seeing this message for more than like 4 seconds thats a bad sign</textarea>
 				<h3>jump to section</h3>
 				<ul>${fs_sorted.map(([short]) => `<li><a href='#${short}'>${short}</a>`).join('')}</ul>
 			</div>

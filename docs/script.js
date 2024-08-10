@@ -1,5 +1,6 @@
 // { short: { title, page, group } }
 const json = fetch('./site.json').then(r => r.json())
+const stills = fetch('./stills.json').then(r => r.json())
 
 const SEARCH = document.querySelector('#search')
 const CONTENT = document.querySelector('#content')
@@ -118,71 +119,6 @@ SEARCH.addEventListener('input', _ => {
 
 /* GRAPH STUFF */
 
-const stills = [
-	"media/a-rolling-stone-gathers-no-moss/1.webp",
-	"media/a-rolling-stone-gathers-no-moss/2.webp",
-	"media/a-rolling-stone-gathers-no-moss/3.webp",
-	"media/a-rolling-stone-gathers-no-moss/4.webp",
-	"media/a-rolling-stone-gathers-no-moss/5.webp",
-	"media/a-rolling-stone-gathers-no-moss/6.webp",
-	"media/a-rolling-stone-gathers-no-moss/7.webp",
-	"media/a-rolling-stone-gathers-no-moss/8.webp",
-	"media/a-rolling-stone-gathers-no-moss/9.webp",
-	"media/a-rolling-stone-gathers-no-moss/10.webp",
-	"media/a-rolling-stone-gathers-no-moss/11.webp",
-	"media/crosswalk/1.webp",
-	"media/crosswalk/2.webp",
-	"media/crosswalk/3.webp",
-	"media/crosswalk/4.webp",
-	"media/crosswalk/5.webp",
-	"media/crosswalk/6.webp",
-	"media/crosswalk/7.webp",
-	"media/crosswalk/8.webp",
-	"media/crosswalk/9.webp",
-	"media/fairytale/1.webp",
-	"media/fairytale/2.webp",
-	"media/fairytale/3.webp",
-	"media/fairytale/4.webp",
-	"media/fairytale/5.webp",
-	"media/fairytale/6.webp",
-	"media/fairytale/7.webp",
-	"media/flaming-fists/2.webp",
-	"media/flaming-fists/5.webp",
-	"media/home-of-rocks/1.webp",
-	"media/home-of-rocks/5.webp",
-	"media/home-of-rocks/12.webp",
-	"media/me-and-my-babysitter/4.webp",
-	"media/me-and-my-babysitter/7.webp",
-	"media/me-and-my-babysitter/15.webp",
-	"media/me-and-my-babysitter/16.webp",
-	"media/me-and-my-babysitter/19.webp",
-	"media/the-redemption-of-mr-greg/2.webp",
-	"media/wreck/1.webp",
-	"media/wreck/3.webp",
-	"media/wreck/4.webp",
-	"media/wreck/5.webp",
-	"media/wreck/7.webp",
-	"media/wreck/8.webp",
-	"media/wreck/10.webp",
-	"media/wreck/11.webp",
-	"media/wreck/12.webp",
-	"media/crows-mouth-film/1.webp",
-	"media/crows-mouth-film/2.webp",
-	"media/crows-mouth-film/3.webp",
-	"media/crows-mouth-film/4.webp",
-	"media/crows-mouth-film/5.webp",
-	"media/crows-mouth-film/6.webp",
-	"media/crows-mouth-film/7.webp",
-	"media/crows-mouth-film/8.webp",
-	"media/crows-mouth-film/9.webp",
-	"media/crows-mouth-film/10.webp",
-	"media/crows-mouth-film/11.webp",
-	"media/crows-mouth-film/12.webp",
-	"media/crows-mouth-film/13.webp",
-	"media/crows-mouth-film/14.webp",
-	"media/crows-mouth-film/15.webp"
-]
-
 Array.prototype.rande = function() {
 	return this[Math.floor(Math.random() * this.length)]
 }
@@ -229,12 +165,12 @@ const links =
 	, { source: "b", target: "c", distance: 1110, thick: 8, xShift: 33, back_dx: -30, back_dy: 0 }
 	]
 
-const change_images = _ => {
+const change_images = _ => stills.then(stills => {
 	const imgs = stills.randes(nodes.length)
 	for (let i=0;i<imgs.length; i+=1) {
 		nodes[i].img = imgs[i]
 	}
-}
+})
 
 change_images()
 
