@@ -137,6 +137,9 @@ Autumn Samone, in her series of images in _Rooted_, taken by Jolinna Li, creates
 
 # writing
 
+## From Distant Shores
+!date: May 2024
+
 ## Crow's Mouth
 !date: October 2023
 
@@ -152,9 +155,6 @@ Autumn Samone, in her series of images in _Rooted_, taken by Jolinna Li, creates
 
 ## Grey's Gift
 !date: Spring 2022
-
-## From Distant Shores
-!date: Spring 2024
 
 # about
 

@@ -42,7 +42,7 @@ turn back to her posse before mustering a tight smile at Aneilia. She
 weakly held up the mechanical pencil to confirm their plans for later
 that week.
 
------
+<br>
 
 "What kind of food do humans like?" Aneilia asked her partners Bill and
 Sue.
@@ -111,7 +111,7 @@ Sue sighed. "I just hope it doesn't come down to termination."
 Bill shook his head. "Don't even mention it, casualties are to be as
 minimal as possible."
 
------
+<br>
 
 What to wear? Novalie and her mom struggled over which of her dresses to
 don for the occasion at the end of the week. The two garish garments lay
@@ -180,7 +180,7 @@ as she lowered it from its shelf. She presented it to her mother.
 "Thank you, this is perfect, " was the response she got. Her mother ran
 a wet rag over the basket and let out a hopeful sigh.
 
------
+<br>
 
 Novalie pedaled into the dark.
 
@@ -353,7 +353,7 @@ Novalie followed slowly, her steps being the ones dragging behind
 Aneilia now. She knew the answer to her own question: Of course she was
 bored, there was nothing to do in Athens when you only had one friend.
 
------
+<br>
 
 "She tried to show me the pier," said Aneilia.
 
@@ -465,7 +465,7 @@ bird watching. Aneilia touched the chain and gear hung closest to her,
 the grease blackening her fingers. It was something she thought humans
 would consider art.
 
------
+<br>
 
 Novalie saw Liv Burnman's turquoise toenails above the water as she
 finished her lap in the pool. Liv was always late, but it didn't matter
@@ -548,7 +548,7 @@ she walked towards the locker room.
 said Novalie, but her response was swallowed by a splash; Liv had
 already dived head first into the pool.
 
------
+<br>
 
 Novalie and her mother ended up deciding on the blue sundress that
 pinched at Novalie's armpits and a neat bun that her mother laboriously
@@ -611,7 +611,7 @@ family, even though she was the one begging to visit the big house at
 the end of the culdesac, were quelled, swallowed by a bigger relief of
 acceptance.
 
------
+<br>
 
 Puberty had clutched Novalie at the age of thirteen and that night she
 woke up to the feeling of her breasts swelling in the Floridian heat. In
@@ -658,7 +658,7 @@ Novalie's breath quickened, until she became suspicious of it. But there
 were benefits to living in the half-basement apartment -- it was good
 for escape.
 
------
+<br>
 
 "Can I show you something?" asked Aneilia.
 
