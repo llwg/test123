@@ -44,7 +44,7 @@ const display = short =>
 		CONTENT.style.opacity=0
 
 		CONTENT.addEventListener('transitionend', e => {
-			document.title = j[short].title
+			document.title = j[short].title_display
 			CONTENT.innerHTML = j[short].page
 			if(short === 'index') {
 				set_up_fun()

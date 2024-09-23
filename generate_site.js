@@ -197,7 +197,7 @@ const sectionify = pages => group(p => p.group)(pages)
 	})
 
 const pages2sitejson = pages => pages
-	.map(({ htmlcontent, title, group, id }) => [id, { page: htmlcontent, title, group }])
+	.map(({ htmlcontent, title_display, group, id }) => [id, { page: htmlcontent, title_display, group }])
 	.to_h()
 
 const { pages: _pages } = JSON.parse(await Deno.readTextFile(inputfile))
