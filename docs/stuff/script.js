@@ -1,6 +1,7 @@
 // { short: { title, page, group } }
-const json = fetch('./site.json').then(r => r.json())
-const stills = fetch('./stills.json').then(r => r.json())
+const json = fetch(`./site.json`).then(r => r.json()) // each site has its own json at .
+const stills = fetch(`./stills.json`).then(r => r.json())
+	.then(j => j.map(path => `${path2root}/${path}`))
 
 const SEARCH = document.querySelector('#search')
 const CONTENT = document.querySelector('#content')
@@ -29,6 +30,16 @@ DETAILS.forEach((d, i) => {
 // dynamically display page content from short code
 const display = short =>
 	json.then(j => {
+		// json.then(j => {
+			// close unnecessary open groups
+			DETAILS.forEach(d => d.open = d.getAttribute('group') === j[short].group)
+
+			// update .current-page (before page fade in and out)
+			document.querySelectorAll('.current-page').forEach(e => e.classList.remove('current-page'))
+			// console.log(NAVAS.find(a => a.getAttribute('short') === short))
+			NAVAS.find(a => a.getAttribute('short') === short).classList.add('current-page') // css selector ok?
+		// })
+		console.log("Dynamicaly displaying: " + short)
 		CONTENT.style.transition='opacity ease-in 0.1s'
 		CONTENT.style.opacity=0
 
@@ -46,24 +57,28 @@ const display = short =>
 		}, { once: true })
 	})
 
+// window.addEventListener('beforeunload', function (e) {
+//     // Check if any of the input fields are filled
+//     if (fname !== '' || lname !== '' || subject !== '') {
+//         // Cancel the event and show alert that
+//         // the unsaved changes would be lost
+//         e.preventDefault();
+//         e.returnValue = '';
+//     }
+// });
+
 // override nav links with dynamic page load
 for (const a of NAVAS) {
+	const short = a.getAttribute('short')
+	if (!short) continue
 	a.onclick = e => {
-		const short = a.getAttribute('short')
-		json.then(j => {
-			// close unnecessary open groups
-			DETAILS.forEach(d => d.open = d.getAttribute('group') === j[short].group)
 
-			// update .current-page (before page fade in and out)
-			document.querySelectorAll('.current-page').forEach(e => e.classList.remove('current-page'))
-			NAVAS.find(a => a.getAttribute('short') === short).classList.add('current-page') // css selector ok?
-		})
 		if (curr_short !== short) {
 			if (set_interval !== false) {
 				clearInterval(set_interval)
 				set_interval = false
 			}
-			clear_search()
+			// clear_search()
 			display(short).then(_ => history.pushState({ short }, '', a.href))
 			curr_short = short
 		}
@@ -75,6 +90,8 @@ for (const a of NAVAS) {
 window.addEventListener('popstate', e => display(e.state?.short ?? short_base))
 
 /* SEARCH STUFF */
+
+/*
 function clear_search(){
 	SEARCH.value = ''
 	// this is probably doing this duplicate in some cases but oh well?.
@@ -116,6 +133,7 @@ SEARCH.addEventListener('input', _ => {
 	}
 	DETAILS.forEach(d => d.open = active_groups.has(d.getAttribute('group')))
 })
+*/
 
 /* GRAPH STUFF */
 

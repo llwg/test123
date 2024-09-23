@@ -51,13 +51,13 @@ table {
 
 @font-face {
 	font-family: modern-font-haha;
-	src: url(latin-roboto.woff2);
+	src: url(stuff/latin-roboto.woff2);
 	font-display: swap;
 }
 
 @font-face {
 	font-family: freight;
-	src: url(FreightBig-Light.woff);
+	src: url(stuff/FreightBig-Light.woff);
 	font-display: swap;
 }
 
@@ -165,8 +165,11 @@ a[short='index']
 	{ color: var(--idk-color)
 	}
 
-nav summary:hover, nav details[open] summary,
-a:hover[short='about-artist'], a.current-page[short='about-artist']
+nav summary:hover,
+nav details[open] summary,
+/* a:hover[short='about-artist'], */
+nav a:hover,
+a.current-page[short='about-artist']
 	{ font-weight: bold
 	}
 
