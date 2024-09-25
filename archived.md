@@ -171,26 +171,13 @@ yt   tmo5HYpJDSs
 ~~~
 Second analog film. A girl revisits childhood sites and sees a shadow of something she left behind. Plays with angles and disorientation.
 
-## Brunch
+## Intro Film
 ~~~
 md   16-mm Color Negative Film
-yt   qG45tsNTZmU?start=8
+yt   qG45tsNTZmU
+date_display Spring 2022
 ~~~
-Mel’s Cafe is an old place on West Main Street. The people who go there know it for its hearty brunch and newspapers pasted over its walls. I wanted to capture a mundane moment, have it mingle with my own nostalgia through the audio.
-
-## Kettle Boils While Watched
-~~~
-md   16-mm Color Negative Film
-yt   qG45tsNTZmU?start=92
-~~~
-Urban isolation, surveillance and anxiety explored through editing and audio.
-
-## Haiku Film
-~~~
-md   16-mm Color Negative Film
-yt   qG45tsNTZmU?start=150
-~~~
-Long lost lovers or ex-friends, two women examine what they have lost in remembrance.
+Shorts shot on 16 mm film for Kevin Everson’s introduction to Film class where bolex cameras were used to explore experimental storytelling. Three vignettes: *Brunch*, *A Kettle Boils While being Watched*, and *Haiku*.
 
 # photography
 
