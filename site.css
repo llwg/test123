@@ -175,6 +175,8 @@ a.current-page[short='about-artist']
 
 #name.current-page { font-weight: bold }
 
+.film-intro p { margin-top: 1rem }
+
 p a:hover, details a:hover, details a.current-page
 	{ font-weight: bold
 	; font-variation-settings: "wght" 600

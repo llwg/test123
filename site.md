@@ -9,6 +9,23 @@ extranav [{"name": "archived", "href": "./archived/"}]
 
 # film
 
+## Gui Zhou (Stories of the Return)
+~~~
+date 2024.6
+id guizhou
+~~~
+American film director Yu Ge travels to Taipei, Taiwan, to shoot a script that her mother was never able to complete before her passing, in hopes of gaining a better understanding of her mother’s homeland and heritage. Two stories of searching are told in parallel—the present-day story of a director and the film within her film, set during the 1980s Taiwan economic boom. As generational, cultural, and geographical gaps are tested, Yu Ge's tenuous relationships with her actors and her late mother are pushed to the brink.
+
+Written and shot in Taipei, Taiwan in the summer of 2024. *GuiZhou* is a project that has been greatly supported by the University of Virginia, having received three significant grants: the University Undergraduate Award for Arts Project, the Miller Arts Rising 4th Year Award, and the Echols Ingrassia Research Fund.
+
+## A Series of Experiments on Time and Place
+~~~
+date 2024.9
+id series-of-experiments
+title_sidebar A Series of Experiments...
+~~~
+An experimental series exploring memory, time, and distance, through conversation and performance. How do we in a digital age connect and reminisce? Plays with the use of greenscreen and mirrors.
+
 ## Animus
 ~~~
 date 2024.5
@@ -80,8 +97,6 @@ yt   tmo5HYpJDSs
 ~~~
 Second analog film. A girl revisits childhood sites and sees a shadow of something she left behind. Plays with angles and disorientation.
 
-
-
 # photography
 
 ## Remember the Wolf
@@ -137,5 +152,5 @@ Jolinna Li is a filmmaker based in Charlottesville, Virginia. She is a current S
 <p>
 Contact: <a href='mailto:jolinnayli@gmail.com'><u>jolinnayli@gmail.com</u></a>
 <br>
-Resume: <a target='_blank' href='./Resume_Jolinna_Li.pdf'><u>PDF</u></a>
+Resume: <a target='_blank' href='./stuff/Resume_Jolinna_Li.pdf'><u>PDF</u></a>
 </p>

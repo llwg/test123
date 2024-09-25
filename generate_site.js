@@ -25,12 +25,9 @@ const PAGEGEN =
 		const stills_disp = stills.length === 0
 			? ''
 			: `<div class=stills>${stills.map(src => `<img class=still src='${src}'>`).join('')}</div>`
-		const date = date_display
-			? date_display
-			: ''
 
 		return `<div class=film-intro><h2 class=film-title>${title_display}</h2>`
-			+ `<div class=film-details><span>${date}</span><span>${md}</span></div>${blocks_html}</div>`
+			+ `<div class=film-details><span>${date_display ?? ''}</span><span>${md ?? ''}</span></div>${blocks_html}</div>`
 			+ yt_disp + stills_disp
 	}]
 	, [IS_PHOTOGRAPHY, ({ title_display, stills, blocks_html }) => {
