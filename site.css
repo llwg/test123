@@ -183,12 +183,8 @@ p a:hover, details a:hover, details a.current-page
 	; color: var(--idk-color)
 	}
 
-
-.index-content { order: -1 }
-
 /* desktop */
 @media (min-width: 44rem) {
-	.index-content { order: 0 }
 	/* body { background-color: #aea } */
 	body
 		{ grid-template-columns: 16rem 1fr

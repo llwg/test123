@@ -33,6 +33,13 @@ md   Digital, Blackmagic HD
 ~~~
 Animus is inspired by Taiwanese superstition and Greek mythology. While painting in a field, Daphne, an uninspired artist, is surprised by a mysterious Red figure that has something to show her. Animus explores the ways in which we bar ourselves from reaching our true potential and the experience of embracing the process.
 
+## a rolling stone gathers no moss
+~~~
+md   Digital, Blackmagic HD
+yt   pgWBt0oGZjU
+~~~
+a rolling stone gathers no moss addresses collective art-making through resonant conversations and lingering stretches of shared imagination. At the secluded Biological Research Station at Pembroke, Virginia, an analogous relationship between creative and scientific processes surfaced. It was one of trial and error, and at times, much frustration. When things come to a halt, one turns to community, conversing and exchanging ideas until it feels right to venture out again. And the effect is often a rippling one. The flow of inspiration from person to person, like the complex ecological networks that surround us, underscore the symbiotic relationship between the creator of the film and the many creators within the film. Between the artists, fantastical visions are transposed and realized, while ideas of transparency, authorial voice, and “candidness” are stretched, amplified, and questioned. This film was first screened at Mountain Lake at our student Artlab Showcase and was officially selected for the Down East Flick Fest in Greenville, North Carolina where it will be screened in late November.
+
 ## crow's mouth
 ~~~
 date  2023.9
@@ -49,6 +56,13 @@ md   Digital, Blackmagic HD
 yt   6hPOSOGaghQ
 ~~~
 Two friends, Frank and Noelle, investigate a cave surrounded by internet mystery. Once inside, the two find themselves reckoning with the horrors of their own imagination.
+
+## wreck
+~~~
+md   Digital, Blackmagic HD
+yt   wVcpXXSR1GE
+~~~
+Through visual and aural language, this film opens discussion between the impermanence of the individual alongside the irreparable effects humankind has had on the environment. In three parts inspired by Percy Shelley's poem 'Ozymandias', _wreck_ uses three distinct visual modes to convey its message.
 
 ## Fairytale
 ~~~
@@ -72,23 +86,6 @@ md   Analog, 16-mm b&w reversal film
 yt   W8Jgeo6rx6k
 ~~~
 Class project shot on film. Night at the jazz club gone wrong.
-
-
-<!--experimental-->
-
-## a rolling stone gathers no moss
-~~~
-md   Digital, Blackmagic HD
-yt   pgWBt0oGZjU
-~~~
-a rolling stone gathers no moss addresses collective art-making through resonant conversations and lingering stretches of shared imagination. At the secluded Biological Research Station at Pembroke, Virginia, an analogous relationship between creative and scientific processes surfaced. It was one of trial and error, and at times, much frustration. When things come to a halt, one turns to community, conversing and exchanging ideas until it feels right to venture out again. And the effect is often a rippling one. The flow of inspiration from person to person, like the complex ecological networks that surround us, underscore the symbiotic relationship between the creator of the film and the many creators within the film. Between the artists, fantastical visions are transposed and realized, while ideas of transparency, authorial voice, and “candidness” are stretched, amplified, and questioned. This film was first screened at Mountain Lake at our student Artlab Showcase and was officially selected for the Down East Flick Fest in Greenville, North Carolina where it will be screened in late November.
-
-## wreck
-~~~
-md   Digital, Blackmagic HD
-yt   wVcpXXSR1GE
-~~~
-Through visual and aural language, this film opens discussion between the impermanence of the individual alongside the irreparable effects humankind has had on the environment. In three parts inspired by Percy Shelley's poem 'Ozymandias', _wreck_ uses three distinct visual modes to convey its message.
 
 ## Growing and leaving
 ~~~
